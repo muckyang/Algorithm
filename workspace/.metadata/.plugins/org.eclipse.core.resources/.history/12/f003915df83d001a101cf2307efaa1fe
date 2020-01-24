@@ -1,0 +1,73 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
+public class CODE_8898_3D_Farmer {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		//Scanner sc = new Scanner(System.in);
+		
+		BufferedReader r = new BufferedReader(new InputStreamReader(System.in));
+        String t_String;
+		int T;
+        //T=sc.nextInt();
+        T=Integer.parseInt(r.readLine());
+        int N,M;
+        int c1,c2;
+        int horse_z;
+        int [] cow_list = new int[500000];
+        int mindist= 100000000;
+        int mincount =0 ;
+        for(int test_case = 1; test_case <= T; test_case++){
+           // N=sc.nextInt();
+           // M=sc.nextInt();
+           // c1=sc.nextInt();
+           // c2=sc.nextInt();
+        	StringTokenizer s =null;
+        	s = new StringTokenizer(r.readLine());
+        	N = Integer.parseInt(s.nextToken());
+        	M = Integer.parseInt(s.nextToken());
+
+        	s = new StringTokenizer(r.readLine());
+        	c1 = Integer.parseInt(s.nextToken());
+        	c2 = Integer.parseInt(s.nextToken());
+        	//System.out.println("N : "+N +"  M : "+M +"  c1 : "+c1 +"  c2 : "+c2 );
+        	
+        	s = new StringTokenizer(r.readLine());
+            for(int i = 0 ; i < N  ; i++){
+                //cow_list[i] = sc.nextInt();
+            	cow_list[i] = Integer.parseInt(s.nextToken());
+            	Arrays.sort(cow_list);
+            } 
+            s = new StringTokenizer(r.readLine());
+            for(int i = 0 ; i < N  ; i++){
+                //horse_z = sc.nextInt();
+            	
+            	horse_z =  Integer.parseInt(s.nextToken());
+                for(int j = 0 ; j < M  ; j++){
+                    if(mindist > Math.abs(horse_z - cow_list[i])){
+                           mindist = Math.abs(horse_z - cow_list[i]);
+                           mincount=1;
+                    }else if(mindist == Math.abs(horse_z - cow_list[i]))
+                             mincount++;
+                    
+                    if(i < M - 1) {
+                		if(Math.abs(horse_z - cow_list[j]) < Math.abs(horse_z - cow_list[j+1]))
+                			break;
+                	}
+                }
+            }
+            int p = c1 -c2;
+            mindist =mindist+Math.abs(p);
+            System.out.println("#"+test_case +" " +mindist +" " + mincount);
+            cow_list = new int[500000];
+            mindist = 100000000;
+            mincount =0 ;
+        }
+	}
+
+}
