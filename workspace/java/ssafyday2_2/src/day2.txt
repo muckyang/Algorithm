@@ -1,0 +1,30 @@
+* 배열 (Array) : reference data type
+ > 같은 Data type을 여러개의 값을 연속적으로 저장할 수 있는 저장공간.
+ > 초기 크기 불변.
+ > 배열크기 -> 배열.length
+ 
+  a. 기본 DT의 배열
+ 	1. 선언 : 접근제어자 DT[] 배열명;
+ 	  public int [] numList; //변수만 선언함 (주소할당 x)
+ 	  
+ 	2. 생성(reference타입의 특징)
+ 		배열명  = new DT[크기]; // 새로운 주소값 할당
+ 		numList = new int[3];
+ 			
+ 		>>>>>>>>>>>>>>>>>>>>1,2 동시
+ 		접근제어자 DT[] 배열명 = new DT[크기];
+ 		public int [] n_List = new int[3]; 
+
+ 	3. 사용 : 배열명[index] = 값 ;//set
+ 			exp(배열명[index]) //get
+ 			numList[0] = 10;
+ 			numList[1] = 20;
+ 			numList[2] = 30;
+ 			
+ 			Syso(numList[2]);
+
+		>>>>>>>>>>>>>>>>>>>>>>>>>>1,2,3 동시
+		접근제어자 DT[] 배열명 = {값1,값2,값3};
+		
+		public int [] num = {10,20,30};
+		 			
