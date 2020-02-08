@@ -1,4 +1,4 @@
-package Ing;
+package Study_0208;
 import java.util.Scanner;
 
 public class Main_2567_색종이2_어케하냐 {

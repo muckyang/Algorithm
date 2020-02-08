@@ -1,3 +1,4 @@
+package Ing;
 import java.util.Scanner;
 
 public class Main_1802_종이접기 {

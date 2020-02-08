@@ -1,4 +1,4 @@
-package Complete;
+package Study_0208;
 import java.util.Scanner;
 public class Solution_D3_4615_오셀로게임_재인 {
 
