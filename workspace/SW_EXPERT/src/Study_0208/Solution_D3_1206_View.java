@@ -23,7 +23,7 @@ public class Solution_D3_1206_View {
 
 			for (int i = 2; i < N-2; i++) {
 				for (int j = 0; j < 255; j++) {
-					if (matrix[j][i] == 1 &&matrix[j][i + 1] == 0 && matrix[j][i + 2] == 0 && matrix[j][i - 1] == 0
+					if (matrix[j][i] == 1 && matrix[j][i + 1] == 0 && matrix[j][i + 2] == 0 && matrix[j][i - 1] == 0
 							&& matrix[j][i - 2] == 0)
 						count++;
 				}
