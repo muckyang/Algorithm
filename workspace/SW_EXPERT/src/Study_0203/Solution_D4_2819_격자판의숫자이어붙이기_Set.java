@@ -8,7 +8,7 @@ public class Solution_D4_2819_격자판의숫자이어붙이기_Set {
 	static int T;
 	static String[][] matrix;
 	static Set<String> set;
-	//static int[] su;
+	// static int[] su;
 	static String s;
 	static int cnt;
 	static int[] dx = { 1, 0, -1, 0 };
@@ -16,16 +16,12 @@ public class Solution_D4_2819_격자판의숫자이어붙이기_Set {
 
 	public static void func(int x, int y, int count, String s) {
 		if (count == 7) {
-			if (set.contains(s) == false) {
-				cnt++;
-				set.add(s);
-			}
-			
+			set.add(s);
 			return;
 		} else {
 			for (int d = 0; d < 4; d++) {
 				if (x + dx[d] >= 0 && y + dy[d] >= 0 && x + dx[d] < 4 && y + dy[d] < 4) {
-					func(x+dx[d],y+dy[d],count+1,s+matrix[x+dx[d]][y+dy[d]]);
+					func(x + dx[d], y + dy[d], count + 1, s + matrix[x + dx[d]][y + dy[d]]);
 				}
 
 			}
@@ -36,10 +32,9 @@ public class Solution_D4_2819_격자판의숫자이어붙이기_Set {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		T = sc.nextInt();
-		
+
 		matrix = new String[4][4];
-		
-		
+
 		for (int test_case = 1; test_case <= T; test_case++) {
 			cnt = 0;
 			set = new HashSet<>();
@@ -52,13 +47,13 @@ public class Solution_D4_2819_격자판의숫자이어붙이기_Set {
 
 			for (int i = 0; i < 4; i++) {
 				for (int j = 0; j < 4; j++) {// 시작지점 설정
-					
+
 					func(i, j, 1, matrix[i][j]);
 
 				}
-				
+
 			}
-			System.out.println("#" + test_case + " " + cnt);
+			System.out.println("#" + test_case + " " + set.size());
 		}
 	}
 }
