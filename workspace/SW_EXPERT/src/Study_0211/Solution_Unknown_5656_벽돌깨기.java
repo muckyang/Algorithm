@@ -17,12 +17,12 @@ public class Solution_Unknown_5656_벽돌깨기{
 			return;
 		}
 		int[][] matrix = new int[H][W];
-		mat = BlockClaer(mat);
+//		mat = BlockClaer(mat);
 		for (int j = 0; j < W; j++) {
 			for (int i = 0; i < H; i++) { // 값만 복사해줌
 				System.arraycopy(mat[i], 0, matrix[i], 0, W);
 			}
-			matrix = BlockClaer(matrix);// 이게 뭔데 이거때매됨?
+//			matrix = BlockClaer(matrix);// 이게 뭔데 이거때매됨?
 			for (int i = 0; i < H; i++) {
 				if (matrix[i][j] != 0) {
 
@@ -70,20 +70,35 @@ public class Solution_Unknown_5656_벽돌깨기{
 		return mat;
 	}
 	
+//	public static int[][] BlockClaer(int[][] mat) {
+//		for (int j = 0; j < W; j++) {//옆으로 돔
+//			for (int i = H - 1; i >= 0; i--) {
+//				
+//				if (mat[i][j] == 0) {
+//					for (int k = i; k >= 0; k--) {// [k or i][j]
+//						if (k == 0)
+//							mat[0][j] = 0;
+//						else {
+//							mat[k][j] = mat[k - 1][j];
+//						}
+//					}
+//				}
+//			}
+//		}
+//		return mat;
+//	}
 	public static int[][] BlockClaer(int[][] mat) {
 		for (int j = 0; j < W; j++) {//옆으로 돔
+			int idx = H-1;
 			for (int i = H - 1; i >= 0; i--) {
 				
-				if (mat[i][j] == 0) {
-					for (int k = i; k >= 0; k--) {// [k or i][j]
-						if (k == 0)
-							mat[0][j] = 0;
-						else {
-							mat[k][j] = mat[k - 1][j];
-						}
-					}
+				if (mat[i][j] != 0) {
+					mat[idx][j] = mat[i][j];
+					idx--;
 				}
 			}
+			for(int k = 0; k <=idx;k++)
+				mat[k][j]=0;
 		}
 		return mat;
 	}
