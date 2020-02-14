@@ -1,3 +1,5 @@
+package Study_0211;
+
 import java.util.Arrays;
 import java.util.Scanner;
 class Solution_D3_최장증가부분수열

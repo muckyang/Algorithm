@@ -10,22 +10,17 @@ public class Solution_Unknown_5656_벽돌깨기{
 	static int[] dy = { 0, -1, 0, 1 };
 
 	public static void ping(int[][] mat, int N, int c) {
-
 		numOfBlock(mat);
-		
 		if (N == c) {
 			return;
 		}
 		int[][] matrix = new int[H][W];
-//		mat = BlockClaer(mat);
 		for (int j = 0; j < W; j++) {
 			for (int i = 0; i < H; i++) { // 값만 복사해줌
 				System.arraycopy(mat[i], 0, matrix[i], 0, W);
 			}
-//			matrix = BlockClaer(matrix);// 이게 뭔데 이거때매됨?
 			for (int i = 0; i < H; i++) {
 				if (matrix[i][j] != 0) {
-
 					matrix = Boom(matrix, i, j, matrix[i][j] - 1); // 터질범위 미리 줄여줌
 					matrix[i][j] = 0;
 					matrix = BlockClaer(matrix);
@@ -70,23 +65,6 @@ public class Solution_Unknown_5656_벽돌깨기{
 		return mat;
 	}
 	
-//	public static int[][] BlockClaer(int[][] mat) {
-//		for (int j = 0; j < W; j++) {//옆으로 돔
-//			for (int i = H - 1; i >= 0; i--) {
-//				
-//				if (mat[i][j] == 0) {
-//					for (int k = i; k >= 0; k--) {// [k or i][j]
-//						if (k == 0)
-//							mat[0][j] = 0;
-//						else {
-//							mat[k][j] = mat[k - 1][j];
-//						}
-//					}
-//				}
-//			}
-//		}
-//		return mat;
-//	}
 	public static int[][] BlockClaer(int[][] mat) {
 		for (int j = 0; j < W; j++) {//옆으로 돔
 			int idx = H-1;

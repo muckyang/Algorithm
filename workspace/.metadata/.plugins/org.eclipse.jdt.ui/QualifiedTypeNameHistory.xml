@@ -10,7 +10,6 @@
 <fullyQualifiedTypeName name="java.util.Set"/>
 <fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="Magazine"/>
-<fullyQualifiedTypeName name="java.util.Queue"/>
 <fullyQualifiedTypeName name="javax.swing.plaf.basic.BasicBorders.MarginBorder"/>
 <fullyQualifiedTypeName name="BMain_7562_나이트의이동"/>
 <fullyQualifiedTypeName name="java.util.PriorityQueue"/>
@@ -18,7 +17,8 @@
 <fullyQualifiedTypeName name="java.lang.Math"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
-<fullyQualifiedTypeName name="java.util.Scanner"/>
-<fullyQualifiedTypeName name="java.util.LinkedList"/>
 <fullyQualifiedTypeName name="wth.Solution_D5_7206_숫자게임"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="java.util.Queue"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
 </qualifiedTypeNameHistroy>
