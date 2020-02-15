@@ -24,9 +24,11 @@ public class Main_17471_게리맨더링 {
 				int k = sc.nextInt();
 				link[c][k] = 1;
 				link[k][c] = 1;
-
 			}
 		}
-
+		 // input 끝
+		
+		
+		
 	}
 }
