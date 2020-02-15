@@ -2,7 +2,7 @@ package Study_0211;
 
 import java.util.Scanner;
 
-public class Solution_전등켜기 {
+public class Solution_Unknown_전등켜기 {
 	static int T;
 	static int[] list;
 	static int[] result;

@@ -1,8 +1,8 @@
-package Study_0211;
+package Pass_Feb_Week02;
 
 import java.util.Scanner;
 
-public class Solution_D3_1244_최대상금 {
+public class Solution_D3_1244_최대상금_재인 {
 
 	static int T;
 	static int[] list;
@@ -47,3 +47,7 @@ public class Solution_D3_1244_최대상금 {
 		}
 	}
 }
+////바뀔 두 수 크기비교 안하고 무조건 교환 -> 느려짐 
+
+
+
