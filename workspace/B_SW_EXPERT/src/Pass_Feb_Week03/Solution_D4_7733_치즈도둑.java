@@ -44,7 +44,7 @@ public class Solution_D4_7733_치즈도둑 {
 			int ix = x + dx[d];
 			int jy = y + dy[d];
 			if (ix >= 0 && jy >= 0 && ix < N && jy < N && !visited[ix][jy] && matrix[ix][jy] != 0) {
-				visited[ix][jy] = true;
+				visited[x][y] = true;
 				count(ix, jy);
 			}
 		}

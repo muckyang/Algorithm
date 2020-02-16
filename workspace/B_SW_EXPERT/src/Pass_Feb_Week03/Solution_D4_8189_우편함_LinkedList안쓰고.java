@@ -1,4 +1,4 @@
-package Study_0216;
+package Pass_Feb_Week03;
 
 import java.util.Scanner;
 
