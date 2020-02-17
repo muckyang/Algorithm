@@ -87,6 +87,8 @@
 		<item value="20" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="quick_assist_proposal_size">
+		<item value="866" key="size.y"/>
+		<item value="355" key="size.x"/>
 	</section>
 	<section name="NewPackageWizardPage">
 		<item value="false" key="create_package_info_java"/>

@@ -11,7 +11,7 @@ public class Main_17406_배열돌리기4 {
 	static int[] dx = { 1, 0, -1, 0 };
 	static int[] dy = { 0, 1, 0, -1 };
 	static int[][] list;
-	static int[] pre;
+	static int[] pre; 
 	static int min;
 
 	private static void line(int flag, int c) {
@@ -77,6 +77,7 @@ public class Main_17406_배열돌리기4 {
 		N = Integer.parseInt(st.nextToken());
 		M = Integer.parseInt(st.nextToken());
 		K = Integer.parseInt(st.nextToken());
+		
 		list = new int[K][3];
 		pre = new int[K];
 		min = Integer.MAX_VALUE;

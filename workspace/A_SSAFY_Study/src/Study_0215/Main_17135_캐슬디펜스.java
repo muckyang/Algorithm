@@ -9,11 +9,10 @@ public class Main_17135_캐슬디펜스 {
 	class Point {
 		int x;
 		int y;
-
 	}
 
 	public static void func(int start, int archer) {
-		if (archer == 3) {
+		if (archer == 3) { 
 			int[][] mat = new int[N+1][M];
 			for (int i = 0; i <= N; i++) {
 				System.arraycopy(matrix[i], 0, mat[i], 0, matrix[i].length);
@@ -101,10 +100,6 @@ public class Main_17135_캐슬디펜스 {
 		}
 	}
 
-	public static void dist(Point a, Point m) {// 아처좌표 , 몬스터좌표
-
-	}
-
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		N = sc.nextInt();
@@ -117,7 +112,6 @@ public class Main_17135_캐슬디펜스 {
 				matrix[i][j] = sc.nextInt();
 			}
 		}
-
 		func(0, 0);
 		System.out.println(result);
 	}
