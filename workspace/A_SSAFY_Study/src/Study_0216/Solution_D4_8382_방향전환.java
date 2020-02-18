@@ -24,7 +24,6 @@ public class Solution_D4_8382_방향전환 {
 				} else {
 					result = c + Math.abs(valuex) + Math.abs(valuey) - 1;
 				}
-
 				System.out.println("#" + test_case + " " + result);
 			} else {
 				System.out.println("#" + test_case + " " + (Math.abs(valuex) + Math.abs(valuey)));

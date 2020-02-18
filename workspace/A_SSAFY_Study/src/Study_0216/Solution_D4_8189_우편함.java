@@ -26,7 +26,7 @@ public class Solution_D4_8189_우편함 {
 			int postc = 0;// 몇번쨰 편지 까지 받았는지 표시
 			que = new LinkedList<Integer>();
 			
-			for (int time = 1; time < 2000; time++) { // 시간은 1씩 증가
+			for (int time = 1; time < 3000; time++) { // 시간은 1씩 증가
 				if(postc == post.length && que.isEmpty())
 					break;
 				

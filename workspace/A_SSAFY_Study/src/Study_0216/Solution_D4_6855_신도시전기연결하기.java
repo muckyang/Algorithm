@@ -1,5 +1,4 @@
 package Study_0216;
-
 import java.util.PriorityQueue;
 import java.util.Scanner;
 
@@ -9,16 +8,13 @@ public class Solution_D4_6855_신도시전기연결하기 {
 
 	private static class Home implements Comparable<Home> {
 		int dist;
-
 		public Home(int dist) {
 			this.dist = dist;
 		}
-
 		@Override
 		public int compareTo(Home o) {
 			return this.dist - o.dist;
 		}
-
 	}
 
 	public static void main(String[] args) {
