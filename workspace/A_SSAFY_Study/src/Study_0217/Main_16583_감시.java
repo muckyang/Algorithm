@@ -8,8 +8,9 @@ public class Main_16583_감시 {
 	static int N, M;
 	static int[][] matrix;
 	static boolean[][] visited;
-	static int[] list;
 	static int camerac;
+	static int[][] lists;
+
 	static int[] dx = { 0, 1, 0, -1 };
 	static int[] dy = { 1, 0, -1, 0 };
 	static Queue<Point> que;
@@ -18,10 +19,12 @@ public class Main_16583_감시 {
 	public static class Point {
 		int x;
 		int y;
+		int d;
 
-		public Point(int x, int y) {
+		public Point(int x, int y, int d) {
 			this.x = x;
 			this.y = y;
+			this.d = d;
 		}
 	}
 
@@ -38,14 +41,14 @@ public class Main_16583_감시 {
 			for (int j = 0; j < M; j++) {
 				matrix[i][j] = sc.nextInt();
 				if (matrix[i][j] == 5) {
-					que.add(new Point(i, j));
-				} else if (matrix[i][j] != 0 && matrix[i][j] > 5) {
+					que.add(new Point(i, j, -1));
+				} else if (matrix[i][j] > 0 && matrix[i][j] < 5) {
 					camerac++;
 				}
 			}
 		}
-		list = new int[camerac];
-		System.out.println(camerac);
+//		System.out.println(camerac);
+		lists = new int[3][camerac];
 
 		int mat[][] = new int[N][M];
 		for (int i = 0; i < N; i++) {
@@ -62,57 +65,74 @@ public class Main_16583_감시 {
 		int count = 0;
 		for (int i = 0; i < N; i++) {
 			for (int j = 0; j < M; j++) {
-				if(mat[i][j] == 0)
+				if (mat[i][j] == 0)
 					count++;
 			}
 		}
-		if(min == Integer.MAX_VALUE) {
+		if (min == Integer.MAX_VALUE) {
 			min = count;
 		}
+
 		System.out.println(min);
+
 	}
 
 	private static void allcheck(int[][] mat, int c) {
-		
+
 		if (c == camerac) {
+			int countmat[][] = new int[N][M];
+			for (int i = 0; i < N; i++) {
+				System.arraycopy(mat[i], 0, countmat[i], 0, mat[i].length);
+			}
 			for (int k = 0; k < c; k++) {
+
 				boolean[] ban = new boolean[4];
-				if(que.isEmpty())
-					break;
-				Point p = que.poll();
-				if (mat[p.x][p.y] == 4) {
-					ban[list[k]] = true;
-					func(mat, p.x, p.y, ban);
-				} else if (mat[p.x][p.y] == 2) {
-					if(2 <= list[k] )
-						continue;
-					ban[list[k]] = true;
-					ban[list[k]+2] = true;
-					func(mat, p.x, p.y, ban);
-				} else if (mat[p.x][p.y] == 3) {
-					ban[list[k]] = true;
-					if (list[k] == 3)
+
+				if (countmat[lists[0][k]][lists[1][k]] == 4) {
+					ban[lists[2][k]] = true;
+					func(countmat, lists[0][k], lists[1][k], ban);
+				} else if (countmat[lists[0][k]][lists[1][k]] == 2) {
+					if (2 > lists[2][k]) {
+						ban[lists[2][k]] = true;
+						ban[lists[2][k] + 2] = true;
+					} else {
+						ban[lists[2][k]] = true;
+						ban[lists[2][k] - 2] = true;
+					}
+					func(countmat, lists[0][k], lists[1][k], ban);
+				} else if (countmat[lists[0][k]][lists[1][k]] == 3) {
+					ban[lists[2][k]] = true;
+					if (lists[2][k] == 3)
 						ban[0] = true;
 					else
-						ban[list[k]] = true;
-					func(mat, p.x, p.y, ban);
-				} else if (mat[p.x][p.y] == 1) {
+						ban[lists[2][k] + 1] = true;
+					func(countmat, lists[0][k], lists[1][k], ban);
+				} else if (countmat[lists[0][k]][lists[1][k]] == 1) {
+//					System.out.println(lists[2][k]);	
 					for (int d = 0; d < 4; d++) {
-						if (list[k] == d)
+						if (lists[2][k] == d)
 							continue;
 						ban[d] = true;
 					}
-					func(mat, p.x, p.y, ban);
+
+					func(countmat, lists[0][k], lists[1][k], ban);
 				}
 			}
 			int cnt = 0;
 			for (int i = 0; i < N; i++) {
 				for (int j = 0; j < M; j++) {
-					if (mat[i][j] == 0)
+					if (countmat[i][j] == 0)
 						cnt++;
 				}
 			}
-			System.out.println(cnt);
+//			System.out.println(cnt);
+//			for (int i = 0; i < N; i++) {
+//				for (int j = 0; j < M; j++) {
+//					System.out.print(countmat[i][j] + " ");
+//				}
+//				System.out.println();
+//			}
+
 			if (min > cnt)
 				min = cnt;
 			return;
@@ -120,10 +140,13 @@ public class Main_16583_감시 {
 			for (int i = 0; i < N; i++) {
 				for (int j = 0; j < M; j++) {
 					if (mat[i][j] > 0 && mat[i][j] < 5 && !visited[i][j]) {
-						que.add(new Point(i, j));
+
+			
+						lists[0][c] = i;
+						lists[1][c] = j;
 						visited[i][j] = true;
 						for (int d = 0; d < 4; d++) {
-							list[c] = d;
+							lists[2][c] = d;
 							allcheck(mat, c + 1);
 						}
 						visited[i][j] = false;
