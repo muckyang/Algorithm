@@ -29,6 +29,35 @@ public class Main_2206_벽부수고이동하기_미완성 {
 
 	}
 
+	private static void bfs(int x, int y) {
+		matrix[x][y] = -1;
+		while (!que.isEmpty()) {
+			int k = que.size();
+			for (int i = 0; i < k; i++) {
+				Point p = que.poll();
+
+				if (p.x == N - 1 && p.y == M - 1) {
+					res = p.depth + 1;
+					return;
+				}
+
+				for (int d = 0; d < 4; d++) {
+					int ix = p.x + dx[d];
+					int jy = p.y + dy[d];
+					if (ix >= 0 && jy >= 0 && ix < N && jy < M) {
+						if (matrix[ix][jy] == 0) {
+							que.add(new Point(ix, jy, p.depth + 1, p.check));
+							matrix[ix][jy] = -1;
+						} else if (p.check == 0 && matrix[ix][jy] == 1) {
+							que.add(new Point(ix, jy, p.depth + 1, 1));
+							matrix[ix][jy] = -1;
+						}
+					}
+				}
+			}
+		}
+	}
+
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		N = sc.nextInt();
@@ -42,41 +71,11 @@ public class Main_2206_벽부수고이동하기_미완성 {
 				matrix[i][j] = s.charAt(j) - 48;
 			}
 		}
+		
 		// 입력확인
 		que.add(new Point(0, 0, 0, 0));
 		bfs(0, 0);
 		System.out.println(res);
 	}
 
-	private static void bfs(int x, int y) {
-		matrix[x][y] = -1;
-		while (!que.isEmpty()) {
-			int k = que.size();
-			for (int i = 0; i < k; i++) {
-				Point p = que.poll();
-			
-				if (p.x == N - 1 && p.y == M - 1) {
-					res = p.depth ;
-					return;
-				}
-				
-				for (int d = 0; d < 4; d++) {
-					int ix = p.x + dx[d];
-					int jy = p.y + dy[d];
-					if (ix >= 0 && jy >= 0 && ix < N && jy < M) {
-						if (matrix[ix][jy] == 0) {
-							que.add(new Point(ix, jy, p.depth + 1, p.check));
-							matrix[ix][jy] = -1;
-						}
-						if (p.check == 0 && matrix[ix][jy] == 1) {
-							que.add(new Point(ix, jy, p.depth + 1, 1));
-							matrix[ix][jy] = -1;
-						}
-					}
-
-				}
-
-			}
-		}
-	}
 }
