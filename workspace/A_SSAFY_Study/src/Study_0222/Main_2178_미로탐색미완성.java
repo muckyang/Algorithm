@@ -2,7 +2,7 @@ package Study_0222;
 
 import java.util.Scanner;
 
-public class Main_2178_미로탐색 {
+public class Main_2178_미로탐색미완성 {
 	static int N, M;
 	static int[][] matrix;
 	static boolean[][] visited;
