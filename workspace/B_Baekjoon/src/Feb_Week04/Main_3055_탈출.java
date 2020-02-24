@@ -1,10 +1,10 @@
-package Study_0224;
+package Feb_Week04;
 
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class Main_3055_탈출_미완성 {
+public class Main_3055_탈출 {
 	static int N, M;
 	static int matrix[][];
 	static boolean visited[][];
@@ -76,7 +76,7 @@ public class Main_3055_탈출_미완성 {
 	}
 
 	private static void bfs() {
-		while (!wque.isEmpty() && !sque.isEmpty()) {
+		while (!wque.isEmpty() || !sque.isEmpty()) {
 			int wk = wque.size();
 
 			for (int k = 0; k < wk; k++) {

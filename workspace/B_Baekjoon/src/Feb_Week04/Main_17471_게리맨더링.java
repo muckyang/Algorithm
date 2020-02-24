@@ -1,9 +1,9 @@
-package Study_0224;
+package Feb_Week04;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Main_17471_게리맨더링_미완성 {
+public class Main_17471_게리맨더링 {
 	static int N, min;
 	static int[] people;
 	static boolean[][] graph;
@@ -11,9 +11,11 @@ public class Main_17471_게리맨더링_미완성 {
 	static boolean[] bcheck;
 	static boolean[] va;
 	static boolean[] vb;
-
+	static int ca, cb;
+	static boolean ak, bk;
 	static ArrayList<Point> al;
 	static ArrayList<Point> bl;
+	static boolean kk;
 
 	private static class Point {
 		int x;
@@ -61,27 +63,29 @@ public class Main_17471_게리맨더링_미완성 {
 			int asum = 0;
 			int bsum = 0;
 			int res;
+			ca = cb = 1;
 			va = new boolean[N];
 			vb = new boolean[N];
+			bcheck = new boolean[N];
 			for (int i = 0; i < N; i++) {
 				if (acheck[i]) {
 					al.add(new Point(i));
 					asum += people[i];
-					System.out.print(i + " ");
 				} else {
+					bcheck[i] = true;
 					bsum += people[i];
 					bl.add(new Point(i));
 				}
 			}
-		System.out.println();
 
 			if (arraycheck(al, 1) && arraycheck(bl, 2)) {
-				System.out.println(asum +" ===== " + bsum);
 				res = Math.abs(asum - bsum);
 				if (res < min) {
 					min = res;
 				}
 			}
+			al.clear();
+			bl.clear();
 		}
 		for (int i = start; i < N; i++) {
 			if (!acheck[i]) {
@@ -96,36 +100,42 @@ public class Main_17471_게리맨더링_미완성 {
 	private static boolean arraycheck(ArrayList<Point> ar, int ab) {
 		Point p = ar.get(0);
 		int start = p.x;
-
-		if (check(start, ar, ab, 0)) {
+		kk = false;
+		check(start, ar, ab);
+		if (kk) {
 			return true;
 		}
-
 		return false;
 	}
 
-	private static boolean check(int start, ArrayList<Point> ar, int ab, int c) {
+	private static void check(int start, ArrayList<Point> ar, int ab) {
 		if (ab == 1) {
 			va[start] = true;
-			if (c == ar.size())
-				return true;
+			if (ca == ar.size()) {
+				kk =true;
+				return;
+			}
 			for (int i = 0; i < N; i++) {
 				if (acheck[i] && !va[i] && graph[start][i]) {
 					va[i] = true;
-					check(i, ar, ab, c + 1);
+					ca++;
+					check(i, ar, ab);
 				}
 			}
 		} else {
 			vb[start] = true;
-			if (c == ar.size())
-				return true;
+			if (cb == ar.size()) {
+				kk = true;
+				return;
+			}
 			for (int i = 0; i < N; i++) {
 				if (bcheck[i] && !vb[i] && graph[start][i]) {
 					vb[i] = true;
-					check(i, ar, ab, c + 1);
+					cb++;
+					check(i, ar, ab);
 				}
 			}
 		}
-		return false;
+		return;
 	}
 }

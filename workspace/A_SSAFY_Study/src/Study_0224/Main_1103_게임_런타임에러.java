@@ -23,6 +23,7 @@ public class Main_1103_게임_런타임에러 {
 					int ix = p.x + dx[d] * p.size;
 					int jy = p.y + dy[d] * p.size;
 					if (ix >= 0 && jy >= 0 && ix < N && jy < M && !visited[ix][jy] && matrix[ix][jy] != -1) {
+						visited[ix][jy] = true;
 						que.offer(new Point(ix, jy, matrix[ix][jy]));
 					}
 				}

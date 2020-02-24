@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class Main_16583_감시_히든테케 {
+public class Main_16583_감시 {
 	static int N, M;
 	static int[][] matrix;
 	static boolean[][] visited;
@@ -55,7 +55,6 @@ public class Main_16583_감시_히든테케 {
 		}
 		// 1~4 카메라수 세기
 
-
 //		int mat[][] = new int[N][M];
 //		for (int i = 0; i < N; i++) {
 //			System.arraycopy(matrix[i], 0, mat[i], 0, mat[i].length);
@@ -92,11 +91,15 @@ public class Main_16583_감시_히든테케 {
 			}
 			for (int k = 0; k < c; k++) {
 				boolean[] ban = new boolean[4];
-				if (cv[k] == 4) {
-					ban[cd[k]] = true;
+				if (cv[k] == 1) {
+					for (int d = 0; d < 4; d++) {
+						if (cd[k] == d)//한 방향 제외하고 모두 꺼버림
+							continue;
+						ban[d] = true;
+					}
 					func(countmat, cx[k], cy[k], ban);
-				} else if (cv[k]  == 2) {
-					if (2 > cd[k]) {
+				} else if (cv[k] == 2) {
+					if (2 > cd[k]) {// 가로 or세로
 						ban[cd[k]] = true;
 						ban[cd[k] + 2] = true;
 					} else {
@@ -104,21 +107,18 @@ public class Main_16583_감시_히든테케 {
 						ban[cd[k] - 2] = true;
 					}
 					func(countmat, cx[k], cy[k], ban);
-				} else if (cv[k]  == 3) {
+				} else if (cv[k] == 3) {
 					ban[cd[k]] = true;
 					if (cd[k] == 3)
 						ban[0] = true;
 					else
 						ban[cd[k] + 1] = true;
 					func(countmat, cx[k], cy[k], ban);
-				} else if (cv[k]  == 1) {
-					for (int d = 0; d < 4; d++) {
-						if (cd[k]== d)
-							continue;
-						ban[d] = true;
-					}
+				} else if (cv[k] == 4) {
+					ban[cd[k]] = true;
 					func(countmat, cx[k], cy[k], ban);
 				}
+
 			}
 			int cnt = 0;
 			for (int i = 0; i < N; i++) {
@@ -152,7 +152,7 @@ public class Main_16583_감시_히든테케 {
 		while (true) {
 			x += dx;
 			y += dy;
-			if (x < 0 || y < 0 || x >= N || y >= M || matr[x][y] > 0) {
+			if (x < 0 || y < 0 || x >= N || y >= M || matr[x][y] > 5) {
 				break;
 			} else {
 				matr[x][y] = -1;
