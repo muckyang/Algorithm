@@ -1,4 +1,4 @@
-package Study_0223;
+package Feb_Week03;
 
 import java.util.Scanner;
 
@@ -42,7 +42,9 @@ public class Main_3985_롤케이크 {
 				r2 = cnt;
 				res2 = i;
 			}
+				
 		}
+
 		System.out.println(res1);
 		System.out.println(res2);
 

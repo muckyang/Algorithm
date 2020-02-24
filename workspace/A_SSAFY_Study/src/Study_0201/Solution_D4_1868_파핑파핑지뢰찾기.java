@@ -100,7 +100,7 @@ public class Solution_D4_1868_파핑파핑지뢰찾기 {
             }
  
             for (int i = 0; i < N; i++) {
-                for (int j = 0; j < N; j++) {
+                for (int j = 0; j < N; j ++) {
                     if (matrix[i][j] == 0 && flag[i][j] == false) {
                         count++;
                         flag[i][j] = true;
