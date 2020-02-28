@@ -1,10 +1,10 @@
-package Study_0224;
+package Feb_Week04;
 
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class Main_16583_감시 {
+public class Main_15683_감시 {
 	static int N, M;
 	static int[][] matrix;
 	static boolean[][] visited;

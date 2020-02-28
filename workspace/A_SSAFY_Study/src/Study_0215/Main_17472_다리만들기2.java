@@ -76,19 +76,19 @@ public class Main_17472_다리만들기2 {
 			}
 		}
 
-		int mapchange = 1;
+		int mc = 1;
 		for (int i = 0; i < N; i++) {
 			for (int j = 0; j < M; j++) {
 				if (link[i][j] == 1 && matrix[i][j] == 0) {
-					matrix[i][j] = mapchange;
-					dfs(i, j, mapchange);
-					mapchange++;
+					matrix[i][j] = mc;
+					dfs(i, j, mc);
+					mc++;
 				}
 			}
 		}
 
 
-		link = new int[mapchange][mapchange];// 다시 초기화 함 (x = 0 , y = 0 안쓸꺼임)
+		link = new int[mc][mc];// 다시 초기화 함 (x = 0 , y = 0 안쓸꺼임)
 
 		for (int i = 1; i < link[0].length; i++) {
 			Arrays.fill(link[i], 10000); // 10000으로 초기화
@@ -108,41 +108,41 @@ public class Main_17472_다리만들기2 {
 					que.add(new Point(i, j, link[i][j]));
 			}
 		}
-		int[] visited = new int[link[0].length];
+		int[] v = new int[link[0].length];
 		int union = 1;
 		int result = 0;
 		while (!que.isEmpty()) {
 			Point p = que.poll();
-			if (visited[p.x] == 0 && visited[p.y] == 0) {
-				visited[p.x] = union;
-				visited[p.y] = union;
+			if (v[p.x] == 0 && v[p.y] == 0) {
+				v[p.x] = union;
+				v[p.y] = union;
 				result += p.weight;
 				union++;
-			} else if (visited[p.x] == 0 || visited[p.y] == 0) {
-				int low = visited[p.x] == 0 ? visited[p.y] : visited[p.x];
-				visited[p.x] = low;
-				visited[p.y] = low;
+			} else if (v[p.x] == 0 || v[p.y] == 0) {
+				int low = v[p.x] == 0 ? v[p.y] : v[p.x];
+				v[p.x] = low;
+				v[p.y] = low;
 				result += p.weight;
-			} else if (visited[p.x] == visited[p.y]) {
+			} else if (v[p.x] == v[p.y]) {
 				continue;
-			} else if (visited[p.x] != visited[p.y]) {
-				int low = visited[p.x];
-				int high = visited[p.y];
-				for (int i = 1; i < visited.length; i++) {
-					if (visited[i] == high) {
-						visited[i] = low;
+			} else if (v[p.x] != v[p.y]) {
+				int low = v[p.x];
+				int high = v[p.y];
+				for (int i = 1; i < v.length; i++) {
+					if (v[i] == high) {
+						v[i] = low;
 					}
 				}
-				visited[p.y] = low;
+				v[p.y] = low;
 				result += p.weight;
 			}else {
 				
 			}
 		}
 
-		int check = visited[1];
-		for (int i = 1; i < visited.length; i++) {
-			if (visited[i] != check || check == 0)
+		int check = v[1];
+		for (int i = 1; i < v.length; i++) {
+			if (v[i] != check || check == 0)
 				result = -1;
 		}
 		System.out.println(result);
