@@ -4,8 +4,8 @@ package Study_0301;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Main_15657_N과M9 {
-	static int N, R,C;
+public class Main_15659_N과M11 {
+	static int N, R, C;
 	static int[] list;
 	static int[] check;
 	static int[] cnt;
@@ -20,7 +20,7 @@ public class Main_15657_N과M9 {
 		check = new int[R];
 		cnt = new int[10001];
 		C = 0;
-		
+
 		for (int i = 0; i < N; i++) {
 			int k = sc.nextInt();
 			if (cnt[k] == 0) {
@@ -29,14 +29,12 @@ public class Main_15657_N과M9 {
 			}
 			cnt[k]++;
 		}
-		
-		
 		Arrays.sort(list);
-		perm(0);
+		combi(0);
 		System.out.print(sb);
 	}
 
-	private static void perm(int count) {
+	private static void combi( int count) {
 
 		if (count == R) {
 			for (int i = 0; i < R; i++)
@@ -48,9 +46,7 @@ public class Main_15657_N과M9 {
 		for (int i = N-C; i < N; i++) {
 			if (cnt[list[i]] > 0) {
 				check[count] = list[i];
-				cnt[list[i]]--;
-				perm(count + 1);
-				cnt[list[i]]++;
+				combi( count + 1);
 			}
 		}
 
