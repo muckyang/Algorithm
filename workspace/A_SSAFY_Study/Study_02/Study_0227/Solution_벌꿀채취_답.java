@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Solution_꿀단지_답 {
+public class Solution_벌꿀채취_답 {
 
 	static int N, M, C; // N:벌통크기 M:연속된벌통수 C:채취량
 	static int[][] map, maxMap;

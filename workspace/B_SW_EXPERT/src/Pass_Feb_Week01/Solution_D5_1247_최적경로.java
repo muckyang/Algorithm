@@ -13,10 +13,12 @@ public class Solution_D5_1247_최적경로 {
 		if (count == N) {// 모두 거쳐감
 			dist += Math.abs(ex - x) + Math.abs(ey - y);
 			Min_dist = Math.min(Min_dist, dist);
+			return;
 		} else {
 			for (int i = 0; i < N; i++) {
-				if ((flag & 1 << i) == 0) {
-					func(N, dx[i], dy[i], flag | 1 << i, count + 1, dist + Math.abs(x - dx[i]) + Math.abs(y - dy[i]));
+				int k =  dist + Math.abs(x - dx[i]) + Math.abs(y - dy[i]);
+				if ((flag & 1 << i) == 0 && k < Min_dist) {
+					func(N, dx[i], dy[i], flag | 1 << i, count + 1,k);
 				}
 			}
 
