@@ -22,9 +22,9 @@ public class Solution_D3_2814_최장경로 {
 				m[x][y] = m[y][x] = true;
 			}
 			for (int i = 0; i < N; i++) {
-				v = new boolean[N];
 				v[i] = true;
 				dfs(i, 1);
+				v[i] = false;
 			}
 			System.out.println("#"  + test_case + " " +res);
 		}
