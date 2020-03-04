@@ -29,8 +29,6 @@ public class Main_15657_N과M9 {
 			}
 			cnt[k]++;
 		}
-		
-		
 		Arrays.sort(list);
 		perm(0);
 		System.out.print(sb);

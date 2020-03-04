@@ -59,24 +59,10 @@ public class Main_2206_벽부수고이동하기 {
 							Wmap[ix][jy] = Wmap[p.x][p.y] + 1;
 							que.add(new Point(ix, jy, 1));
 						}
-
-//						if (matrix[ix][jy] == 0) {
-//							if (p.check == 0) {
-//								map[ix][jy] = map[p.x][p.y] + 1;
-//							} else {
-//								Wmap[ix][jy] = Wmap[p.x][p.y] + 1;
-//							}
-//							que.add(new Point(ix, jy, p.check));
-//						} else if (p.check == 0 && matrix[ix][jy] == 1) {
-//							Wmap[ix][jy] = map[p.x][p.y] + 1;
-//							que.add(new Point(ix, jy, 1));
-//
-//						}
 					}
 				}
 			}
 		}
-
 	}
 
 	public static void main(String[] args) {
