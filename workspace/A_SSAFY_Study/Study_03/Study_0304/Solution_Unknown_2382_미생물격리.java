@@ -86,7 +86,6 @@ public class Solution_Unknown_2382_미생물격리 {
 		int jy = micro.y + dy[micro.dist];
 		if (ix == 0 || jy == 0 || ix == N - 1 || jy == N - 1) {
 			micro.num /= 2;
-			
 			if (micro.dist % 2 == 0)
 				micro.dist--;
 			else

@@ -25,29 +25,28 @@ public class Solution_D4_5684_운동 {
 
 			for (int i = 1; i < N + 1; i++) {
 				visited = new boolean[N + 1];
-				visited[i] = true;
-				dfs(i, 0);
+				dfs(i, i, 0);
 			}
 			System.out.println("#" + tc + " " + (res == Integer.MAX_VALUE ? -1 : res));
 		}
 
 	}
 
-	private static void dfs(int node, int sum) {
+	private static void dfs(int sp, int node, int sum) {
+		if (sp == node && visited[sp]) {
+			if (sum < res)
+				res = sum;
+			return;
+		}
+		if (visited[node])
+			return;
 		if (sum >= res)
 			return;
-
+		
+		visited[node] = true;
 		for (int i = 1; i < N + 1; i++) {
-			if (node != i && matrix[node][i] != 0) {
-				if (!visited[i]) {
-					visited[i] = true;
-					dfs(i, sum + matrix[node][i]);
-					visited[i] = false;
-				} else {
-					if (res > sum + matrix[node][i])
-						res = sum + matrix[node][i];
-					return;
-				}
+			if (matrix[node][i] > 0) {
+				dfs(sp, i, sum + matrix[node][i]);
 			}
 		}
 	}
