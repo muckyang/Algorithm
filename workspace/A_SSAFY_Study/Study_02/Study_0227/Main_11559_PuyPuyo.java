@@ -59,7 +59,6 @@ public class Main_11559_PuyPuyo {
 						que.add(new Point(i, j));
 						dfs(i, j, matrix[i][j]);
 						if (pc >= 4) { // 4개이상 이어진 경우
-						
 							boomPuyo();
 							nowboom = true;
 						}
