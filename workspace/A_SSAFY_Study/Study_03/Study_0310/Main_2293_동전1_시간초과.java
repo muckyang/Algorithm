@@ -1,4 +1,4 @@
-package Study_0304;
+package Study_0310;
 
 import java.util.Arrays;
 import java.util.Scanner;

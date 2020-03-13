@@ -1,10 +1,10 @@
 package Study_0308;
 
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.PriorityQueue;
+import java.util.StringTokenizer;
 
 public class Solution_Unknown_1251_하나로 {
 	static int T, N;
@@ -14,9 +14,8 @@ public class Solution_Unknown_1251_하나로 {
 	static long[][] map;
 	static int[] v;
 	static long res;
-	static List<Point> plist;
-
-	private static class Point {
+	static PriorityQueue<Point> pq;
+	private static class Point implements Comparable<Point>{
 		int from;
 		int to;
 		long dist;
@@ -26,66 +25,58 @@ public class Solution_Unknown_1251_하나로 {
 			this.to = to;
 			this.dist = dist;
 		}
+		@Override
+		public int compareTo(Point o) {
+			if (this.dist < o.dist) {
+				return -1;
+			} else if (this.dist > o.dist) {
+				return 1;
+			} else {
+				return 0;
+			}
+		}
 	}
 
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		T = sc.nextInt();
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String s = br.readLine();
+		T = Integer.parseInt(s);
 		for (int tc = 1; tc <= T; tc++) {
-			N = sc.nextInt();
+			s = br.readLine();
+			N = Integer.parseInt(s);
 			map = new long[N][N];
 			mx = new int[N];
 			my = new int[N];
 			v = new int[N];
-			plist = new LinkedList<Point>();
+			pq = new PriorityQueue<Point>();
+			StringTokenizer st= new StringTokenizer(br.readLine()," ");
 			for (int i = 0; i < N; i++) {
-				mx[i] = sc.nextInt();
+				mx[i] = Integer.parseInt(st.nextToken());
 			}
+			st= new StringTokenizer(br.readLine()," ");
 			for (int i = 0; i < N; i++) {
-				my[i] = sc.nextInt();
+				my[i] = Integer.parseInt(st.nextToken());
 			}
-			E = sc.nextDouble();
-			res= 0;
+			s= br.readLine();
+			E = Double.parseDouble(s);
+			res = 0;
 			for (int i = 0; i < N; i++) {
-				for (int j = i+1; j < N; j++) {
+				for (int j = i + 1; j < N; j++) {
 					long su = (long) Math.pow(mx[i] - mx[j], 2) + (long) Math.pow(my[i] - my[j], 2);
-					plist.add(new Point(i, j, su));
+					pq.add(new Point(i, j, su));
 				}
 			}
-			Collections.sort(plist, new Comparator<Point>() {
-
-				@Override
-				public int compare(Point o1, Point o2) {
-					if (o1.dist < o2.dist) {
-						return -1;
-					} else if (o1.dist > o2.dist) {
-						return 1;
-					} else {
-						return 0;
-					}
-				}
-
-			});
+			
 			int union = 1;
 			int cnt = 0;
-			for (int i = 0; i < plist.size(); i++) {
-				Point p = plist.get(i);
+			for(int i = 0; i < v.length;i++)
+				v[i] = union++;
+			int size = pq.size();
+			for (int i = 0; i < size; i++) {
+				Point p = pq.poll();
 				if (cnt == N - 1)
 					break;
-				if (v[p.to] == 0 && v[p.from] == 0) {
-					v[p.to] = v[p.from] = union;
-					cnt++;
-					union++;
-					res += p.dist;
-				} else if (v[p.to] == 0 && v[p.from] != 0) {
-					v[p.to] = v[p.from];
-					res += p.dist;
-					cnt++;
-				} else if (v[p.to] != 0 && v[p.from] == 0) {
-					v[p.from] = v[p.to];
-					res += p.dist;
-					cnt++;
-				} else if (v[p.to] == v[p.from]) {
+				if (v[p.to] == v[p.from]) {
 					continue;
 				} else if (v[p.to] != v[p.from]) {
 					int t = v[p.to];
@@ -99,7 +90,7 @@ public class Solution_Unknown_1251_하나로 {
 					}
 				}
 			}
-			System.out.println("#"+ tc+" " + (long)(Math.round(res * E)));
+			System.out.println("#" + tc + " " + (long) (Math.round(res * E)));
 		}
 	}
 }
