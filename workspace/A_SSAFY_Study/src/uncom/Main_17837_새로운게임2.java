@@ -1,4 +1,4 @@
-package Study_0306;
+package uncom;
 
 import java.util.Scanner;
 import java.util.Stack;

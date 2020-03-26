@@ -1,4 +1,4 @@
-package Study_0314;
+package Month03_Week02;
 
 import java.util.PriorityQueue;
 import java.util.Scanner;
