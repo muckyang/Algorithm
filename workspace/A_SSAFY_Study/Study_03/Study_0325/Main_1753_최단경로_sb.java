@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.PriorityQueue;
 import java.util.Scanner;
 
-public class Main_1753_최단경로 {
+public class Main_1753_최단경로_sb {
 	static int V, E;
 	static int start;
 	static ArrayList<ArrayList<Point>> map;
@@ -31,12 +31,15 @@ public class Main_1753_최단경로 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		V = sc.nextInt();
-		E = sc.nextInt();
-		start = sc.nextInt() - 1;
-		dist = new int[V];
-		Arrays.fill(dist, Integer.MAX_VALUE);
+		StringBuilder sb = new StringBuilder();
+		V = sc.nextInt();// 정점
+		E = sc.nextInt();// 간선
+		start = sc.nextInt() - 1;// 시작점
 		map = new ArrayList<>();
+		dist = new int[V];
+		pq = new PriorityQueue<>();
+		Arrays.fill(dist, Integer.MAX_VALUE);
+
 		for (int i = 0; i < V; i++) {
 			map.add(new ArrayList<Point>());
 		}
@@ -47,42 +50,25 @@ public class Main_1753_최단경로 {
 			map.get(x).add(new Point(y, v));
 		}
 
-		for (int i = 0; i < V; i++) {
-
-			res = 0;
-			list = new boolean[V];
-			pq = new PriorityQueue<Point>();
-			for (int k = 0; k < map.get(start).size(); k++) {
-				Point p = map.get(start).get(k);
-				list[p.y] = true;
-				pq.add(new Point(p.y, p.v));
-			}
-			solve(i);
-
-		}
-		for (int i = 0; i < V; i++) {
-			if (i == start)
-				System.out.println("0");
-			else if (dist[i] == Integer.MAX_VALUE)
-				System.out.println("INF");
-			else
-				System.out.println(dist[i]);
-		}
-	}
-
-	private static void solve(int target) {
+		pq.add(new Point(start, 0));
 		while (!pq.isEmpty()) {
 			Point p = pq.poll();
-			if (p.y == target) {
-				if (dist[p.y] > p.v)
-					dist[p.y] = p.v;
-				continue;
-			} else {
-				for (int i = 0; i < map.get(p.y).size(); i++) {
-					Point pp = map.get(p.y).get(i);
-					pq.add(new Point(pp.y, pp.v + p.v));
+			for (Point k : map.get(p.y)) {
+				if (dist[k.y] > p.v + k.v) {
+					dist[k.y] = p.v + k.v;
+					pq.add(new Point(k.y, k.v + p.v));
 				}
 			}
 		}
-	}
+		
+		for (int i = 0; i < V; i++) {
+			if (i == start)
+				sb.append("0").append("\n");
+			else if (dist[i] == Integer.MAX_VALUE)
+				sb.append("INF\n");
+			else
+				sb.append(dist[i]).append("\n");
+		}
+		System.out.println(sb.toString());
+	}	
 }

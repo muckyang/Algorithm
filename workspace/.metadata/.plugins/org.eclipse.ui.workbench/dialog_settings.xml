@@ -32,6 +32,7 @@
 		<item value="true" key="WizardZipFileResourceExportPage1.STORE_COMPRESS_CONTENTS_ID"/>
 		<item value="true" key="WizardZipFileResourceExportPage1.STORE_CREATE_STRUCTURE_ID"/>
 		<list key="WizardZipFileResourceExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="C:\Users\yn782\Desktop\200417_selfSW_대전_6반_김영남.zip"/>
 			<item value="C:\Users\yn782\Desktop\hw_strig01_대전_6_김영남.zip"/>
 			<item value="hw strig01_대전_6_김영남.zip"/>
 		</list>
