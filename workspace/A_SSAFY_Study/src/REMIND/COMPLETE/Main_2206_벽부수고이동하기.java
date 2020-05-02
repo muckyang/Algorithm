@@ -1,4 +1,4 @@
-package REMIND;
+package REMIND.COMPLETE;
 
 import java.io.BufferedReader;
 import java.io.IOException;
