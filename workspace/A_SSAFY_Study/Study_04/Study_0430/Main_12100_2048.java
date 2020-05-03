@@ -11,6 +11,7 @@ public class Main_12100_2048 {
 	static int temp[][];
 	static int max;
 	static int turn[];
+	
 	// 최대 5번 이동 한후 최대값?
 	static int dx[] = { 1, -1, 0, 0 };
 	static int dy[] = { 0, 0, 1, -1 };
