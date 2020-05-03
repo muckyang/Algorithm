@@ -77,7 +77,6 @@ public class Main_1726_로봇 {
 		while (!q.isEmpty()) {
 			Point p = q.poll();
 			if (p.x == ex && p.y == ey) {
-
 				int chai = 0;
 				if (ed == p.d) {
 					chai = 0;
