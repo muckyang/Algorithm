@@ -48,12 +48,12 @@ public class Main_17143_낚시왕 {
 		res = 0;
 		for (int i = 0; i < M; i++) {
 			st = new StringTokenizer(br.readLine());
-			int x = Integer.parseInt(st.nextToken())-1;
-			int y = Integer.parseInt(st.nextToken())-1;
+			int x = Integer.parseInt(st.nextToken()) - 1;
+			int y = Integer.parseInt(st.nextToken()) - 1;
 			int speed = Integer.parseInt(st.nextToken());
 			int direction = Integer.parseInt(st.nextToken());
 			int size = Integer.parseInt(st.nextToken());
-			map[x][y] = new Shark(x,y,size,speed , direction);
+			map[x][y] = new Shark(x, y, size, speed, direction);
 		}
 		for (int i = 0; i < C; i++) {
 			// 낚시꾼 낚시!
@@ -65,8 +65,22 @@ public class Main_17143_낚시왕 {
 				}
 			}
 			moveShark();
+			print();
 		}
 		System.out.println(res);
+	}
+
+	private static void print() {
+		for (int i = 0; i < R; i++) {
+			for (int j = 0; j < C; j++) {
+				if (map[i][j] == null)
+					System.out.print("0 ");
+				else
+					System.out.print(map[i][j].size + " ");
+			}
+			System.out.println();
+		}
+		System.out.println();
 	}
 
 	private static void moveShark() {
