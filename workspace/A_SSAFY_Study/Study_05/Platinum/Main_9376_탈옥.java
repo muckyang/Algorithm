@@ -1,4 +1,4 @@
-package Study_0502;
+package Platinum;
 
 import java.io.BufferedReader;
 import java.io.IOException;

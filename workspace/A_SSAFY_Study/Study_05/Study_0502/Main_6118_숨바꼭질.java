@@ -37,7 +37,7 @@ public class Main_6118_숨바꼭질 {
 		q.add(0);
 		dist = -1;
 		bfs();
-		System.out.println(minnum+1 + " " + dist + " " + dupl);
+		System.out.println(minnum + 1 + " " + dist + " " + dupl);
 	}
 
 	private static void bfs() {
