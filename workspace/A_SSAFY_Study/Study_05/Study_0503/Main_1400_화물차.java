@@ -101,12 +101,27 @@ public class Main_1400_화물차 {
 			q.add(new Point(sx, sy, 0));
 			v[sx][sy] = 0;
 			solve();
-
+			//print();
 			System.out.println(min != Integer.MAX_VALUE ? min : "impossible");
 			br.readLine();
 		}
 	}
 
+
+	private static void print() {
+		for (int i = 0; i < N; i++) {
+			for (int j = 0; j < M; j++) {
+				if (v[i][j] == Integer.MAX_VALUE)
+					System.out.print("-");
+				else
+					System.out.print(v[i][j] + " ");
+			}
+			System.out.println();
+		}
+		System.out.println();
+	}
+
+	
 	private static void solve() {
 		while (!q.isEmpty()) {
 			Point p = q.poll();
