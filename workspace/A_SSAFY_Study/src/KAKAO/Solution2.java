@@ -3,7 +3,7 @@ package KAKAO;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
-
+// 2020. 5. 10 개 꼬라박고 겨우 풀어놓음 
 public class Solution2 {
 	static List<Long> slist;
 	static List<Character> clist;
@@ -15,6 +15,7 @@ public class Solution2 {
 
 	public static void main(String[] args) {
 		String expression = "100-200*300-500+20";
+//		String expression = "50*6-3*2";
 		su = new long[100];
 		yeon = new int[3];// - ,+,*
 		ch = new Character[100];
@@ -33,20 +34,18 @@ public class Solution2 {
 				s = "";
 			}
 		}
-//		slist.add(su[count]);
+		su[count] = Integer.parseInt(s);
 		combi(0);
 		System.out.println(result);
 	}
 
 	private static void combi(int cnt) {
 		if (cnt == 3) {
-			int count = 0;
+			slist.add(su[0]);
 			for (int i = 0; ch[i] != null; i++) {
-				slist.add(su[i]);
 				clist.add(ch[i]);
-				count = i;
+				slist.add(su[i+1]);
 			}
-			slist.add(su[count+1]);
 			result = Math.max(result, Math.abs(solve()));
 			return;
 		}
@@ -63,15 +62,13 @@ public class Solution2 {
 		for (int i = 3; i > 0; i--) {
 			for (int k = 0; k < clist.size(); k++) {
 				int cal = check(clist.get(k));
-				if (cal == i) {
+				if (cal == yeon[i-1]) {
 					long number = calc(slist.remove(k), slist.remove(k), clist.remove(k));
 					slist.add(k, number);
+					k--;
 				}
 			}
 		}
-		for (int i = 0; i < slist.size(); i++)
-			System.out.print(slist.get(i) + " ");
-		System.out.println();
 		return slist.remove(0);
 
 	}
@@ -79,11 +76,11 @@ public class Solution2 {
 	private static long calc(long num1, long num2, Character c) {
 		long num = 0;
 		if (c == '-') {
-			num = num2 - num1;
+			num = num1 - num2;
 		} else if (c == '+') {
-			num = num2 + num1;
+			num = num1 + num2;
 		} else if (c == '*') {
-			num = num2 * num1;
+			num = num1 * num2;
 		}
 		return num;
 	}

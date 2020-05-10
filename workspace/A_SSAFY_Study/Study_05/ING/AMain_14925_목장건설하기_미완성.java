@@ -1,11 +1,11 @@
-package Study_0505;
+package ING;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
  
-public class Main_14925_목장건설하기 {
+public class AMain_14925_목장건설하기_미완성 {
 	static int N, M;
 	static int map[][];
 

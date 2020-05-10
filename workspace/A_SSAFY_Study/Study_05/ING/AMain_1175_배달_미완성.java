@@ -1,4 +1,4 @@
-package Study_0503;
+package ING;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class Main_1175_배달_망 {
+public class AMain_1175_배달_미완성 {
 	static int N, M;
 	static int map[][];
 	static int v[][][][];

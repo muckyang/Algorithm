@@ -1,11 +1,11 @@
-package Study_0506;
+package ING;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main_3025_돌던지기 {
+public class AMain_3025_돌던지기 {
 	static int R, C;
 	static int N;
 	static char map[][];// 굳은거 O 장애물 X

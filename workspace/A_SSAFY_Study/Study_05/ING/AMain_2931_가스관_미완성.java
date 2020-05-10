@@ -1,4 +1,4 @@
-package Study_0507;
+package ING;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,11 +7,13 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class Main_2931_가스관 {
+public class AMain_2931_가스관_미완성 {
 	static int N, M;
 	static char map[][];
 	static int dx[] = { 0, 1, 0, -1 };// 동남서북
 	static int dy[] = { 1, 0, -1, 0 };
+	static int pipeTF[][] = { { 0, 0, 0, 0 }, { 1, 1, 0, 0 }, { 0, 1, 1, 0 }, { 0, 0, 1, 1 }, { 1, 0, 0, 1 },
+			{ 0, 1, 0, 1 }, { 1, 0, 1, 0 } }; // 들어오는 기준 0 이면 가능
 	static int sx, sy, ex, ey;
 	static Queue<Pipe> q;
 	static Pipe res;
@@ -66,14 +68,25 @@ public class Main_2931_가스관 {
 					return;
 				}
 				for (int d = 0; d < 4; d++) {
-					if (p.d == d)
+					if (!canGo(p, d)) // 현위치에서 갈수 있는 방향만 가기
 						continue;
 					int ix = p.x + dx[d];
 					int jy = p.y + dy[d];
-					if (!safe(ix, jy) || !canGo(p, d))
+					if (!safe(ix, jy)) // 범위 밖인지 여부
 						continue;
-					if(map[ix][jy] == '.' && p.del == null) {
-//						Pipe a = new Pipe(ix,jy,d);
+					if (map[ix][jy] == '.') {
+						if (p.del == null) {
+							for (int k = 0; k < 7; k++) {
+								if (pipeTF[k][d] == 0) {// 받아짐
+									char sha = ' ';
+									
+//									Pipe addp = new Pipe(ix,jy,d,);
+//									q.add(addp);
+								}
+							}
+						} else {
+							continue;
+						}
 					}
 
 				}
@@ -83,6 +96,8 @@ public class Main_2931_가스관 {
 
 	private static boolean canGo(Pipe p, int d) {
 		char c = map[p.x][p.y];
+		if (p.del != null && p.x == p.del.x && p.y == p.del.y)
+			c = p.del.shape;
 		if (c == 'M')
 			return true;
 		else if (c == '+' && p.d % 2 != d % 2)
@@ -99,7 +114,7 @@ public class Main_2931_가스관 {
 			return true;
 		else if (c == '4' && (d == 1 || d == 2)) // 남서
 			return true;
-		
+
 		return false;
 	}
 
