@@ -1,4 +1,4 @@
-package Study_0503;
+package Uncomplete;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class Main_17281_야구 {
+public class AMain_17281_야구 {
 	static int N;
 	static int list[][];
 	static int player[];

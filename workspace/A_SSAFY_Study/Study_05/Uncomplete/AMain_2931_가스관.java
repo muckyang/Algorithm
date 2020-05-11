@@ -1,4 +1,4 @@
-package ING;
+package Uncomplete;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class AMain_2931_가스관_미완성 {
+public class AMain_2931_가스관 {
 	static int N, M;
 	static char map[][];
 	static int dx[] = { 0, 1, 0, -1 };// 동남서북

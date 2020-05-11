@@ -1,4 +1,5 @@
-package ING;
+package Uncomplete;
+
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,7 +8,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class AMain_1486_등산_미완성 {
+public class AMain_1486_등산 {
 	static int N, M, T, D;
 	static int map[][];
 	static int v[][];

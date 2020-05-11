@@ -1,11 +1,11 @@
-package ING;
+package Uncomplete;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
-
-public class AMain_5549_행성탐사_시간초과 {
+//시간초과
+public class AMain_5549_행성탐사 {
 	static int N, M, K;
 	static char map[][];
 	static int list[][];

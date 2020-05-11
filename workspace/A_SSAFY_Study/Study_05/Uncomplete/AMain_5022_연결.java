@@ -1,11 +1,11 @@
-package ING;
+package Uncomplete;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class AMain_5022_연결_미완성 {
+public class AMain_5022_연결 {
 	static int N, M;
 	static int map[][];
 	static int[] x;
