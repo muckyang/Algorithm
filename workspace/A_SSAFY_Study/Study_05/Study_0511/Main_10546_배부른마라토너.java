@@ -26,8 +26,10 @@ public class Main_10546_배부른마라토너 {
 		Arrays.sort(prelist);
 		Arrays.sort(comlist);
 		for (int i = 0; i < N-1; i++) {
-			if(!prelist[i].equals(comlist[i]))
+			if(!prelist[i].equals(comlist[i])) {
 				res = prelist[i];
+				break;
+			}
 		}
 		if(res.equals(""))
 			res = prelist[N-1];
