@@ -12,30 +12,30 @@ import java.util.StringTokenizer;
 public class Main_1445_일요일아침의데이트 {
 	static int N, M;
 	static int map[][];
-	static int v[][];
+	static Garbage v[][];
+	static boolean gar[][][];
 	static int dx[] = { 0, 1, 0, -1 };
 	static int dy[] = { 1, 0, -1, 0 };
 	static Queue<Point> q;
 	static int sx, sy, fx, fy;
-	static int res;
 
 	public static class Point {
 		int x, y;
-		int ginc;
+		int ginc, gc;
 
-		public Point(int x, int y, int ginc) {
+		public Point(int x, int y, int gc, int ginc) {
 			this.x = x;
 			this.y = y;
-//			this.gc = gc;
+			this.gc = gc;
 			this.ginc = ginc;
 		}
 	}
 
 	public static class Garbage {
-		int ginc;
+		int gc, ginc;
 
-		public Garbage(int ginc) {
-//			this.gc = gc;
+		public Garbage(int gc, int ginc) {
+			this.gc = gc;
 			this.ginc = ginc;
 		}
 	}
@@ -47,13 +47,13 @@ public class Main_1445_일요일아침의데이트 {
 		M = Integer.parseInt(st.nextToken());
 		q = new LinkedList<>();
 		map = new int[N][M];
-		v = new int[N][M];
-		res = Integer.MAX_VALUE;
+		v = new Garbage[N][M];
+		gar = new boolean[2][N][M];
 		for (int i = 0; i < N; i++) {
 			String s = br.readLine();
 			for (int j = 0; j < M; j++) {
 				char c = s.charAt(j);
-				Arrays.fill(v[i], Integer.MAX_VALUE);
+				v[i][j] = new Garbage(Integer.MAX_VALUE, Integer.MAX_VALUE);
 				if (c == 'S') {
 					sx = i;
 					sy = j;
@@ -61,23 +61,23 @@ public class Main_1445_일요일아침의데이트 {
 					fx = i;
 					fy = j;
 				} else if (c == 'g') {
-					map[i][j] = 2;// 쓰레기 위치
+					gar[0][i][j] = true;// 쓰레기 위치
 					for (int d = 0; d < 4; d++) {
 						int ix = i + dx[d];
 						int jy = j + dy[d];
-						if (!safe(ix, jy) || map[ix][jy] == 2)
+						if (!safe(ix, jy))
 							continue;
-						map[ix][jy] = 1;// 쓰레기 주변
+						gar[1][ix][jy] = true;// 쓰레기 주변
 					}
 				}
 			}
 		}
-		q.add(new Point(sx, sy, 0));
-		v[sx][sy] = 0;
+		q.add(new Point(sx, sy, 0, 0));
+		v[sx][sy].gc = 0;
+		v[sx][sy].ginc = 0;
 		solve();
 
-//		print();
-//		System.out.println(v[fx][fy]+ " " + res);
+		System.out.println(v[fx][fy].gc + " " + v[fx][fy].ginc);
 	}
 
 	private static void solve() {
@@ -88,19 +88,32 @@ public class Main_1445_일요일아침의데이트 {
 				for (int d = 0; d < 4; d++) {
 					int ix = p.x + dx[d];
 					int jy = p.y + dy[d];
+					int gc = p.gc;// 쓰레기 지난 수
 					int ginc = p.ginc;// 쓰레기 인접 지난 수
 					if (!safe(ix, jy))
 						continue;
-
+					
 					if (ix == fx && jy == fy) {
-						if (res > p.ginc)
-							res = p.ginc;
+						if (v[ix][jy].gc < gc)
+							continue;
+						if (v[ix][jy].gc == gc && v[ix][jy].ginc <= ginc)
+							continue;
+						v[ix][jy].gc = gc;
+						v[ix][jy].ginc = ginc;
+						continue;
 					}
-					if(map[ix][jy] == 2 && v[ix][jy] >map[p.x][p.y]+1 )
-						v[ix][jy] = map[p.x][p.y]+1;
-					if(map[ix][jy] == 1 )
+					
+					if (gar[0][ix][jy])
+						gc++;
+					else if (gar[1][ix][jy])
 						ginc++;
-					q.add(new Point(ix, jy,ginc));
+					if (v[ix][jy].gc < gc)
+						continue;
+					if (v[ix][jy].gc == gc && v[ix][jy].ginc <= ginc)
+						continue;
+					v[ix][jy].gc = gc;
+					v[ix][jy].ginc = ginc;
+					q.add(new Point(ix, jy, gc, ginc));
 
 				}
 

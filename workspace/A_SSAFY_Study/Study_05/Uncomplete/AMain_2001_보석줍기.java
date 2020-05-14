@@ -1,4 +1,4 @@
-package Study_0514;
+package Uncomplete;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class Main_2001_보석줍기 {
+public class AMain_2001_보석줍기 {
 	static int N, M, K;
 	static boolean jew[];
 	static List<Island>[] list;
