@@ -33,7 +33,6 @@
 <fullyQualifiedTypeName name="Study_0503.Main_1938_통나무옮기기.Point"/>
 <fullyQualifiedTypeName name="Study_0503.Main_1400_화물차.Traffic"/>
 <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
-<fullyQualifiedTypeName name="java.util.Stack"/>
 <fullyQualifiedTypeName name="java.util.Collections"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.io.InputStream"/>
@@ -48,14 +47,17 @@
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="Study_0514.Main_2001_보석줍기.Point"/>
 <fullyQualifiedTypeName name="javax.swing.InputMap"/>
-<fullyQualifiedTypeName name="java.util.Queue"/>
+<fullyQualifiedTypeName name="Study_0514.Main_1445_일요일아침의데이트.Point"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="java.lang.StackOverflowError"/>
+<fullyQualifiedTypeName name="java.util.Stack"/>
+<fullyQualifiedTypeName name="java.util.concurrent.LinkedBlockingDeque"/>
+<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
 <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
 <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
+<fullyQualifiedTypeName name="java.util.Queue"/>
 <fullyQualifiedTypeName name="java.util.LinkedList"/>
-<fullyQualifiedTypeName name="Study_0514.Main_1445_일요일아침의데이트.Point"/>
-<fullyQualifiedTypeName name="java.util.Arrays"/>
 </qualifiedTypeNameHistroy>
