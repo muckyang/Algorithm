@@ -17,6 +17,7 @@ public class Main_2636_치즈 {
 	static int dy[] = { 1, 0, -1, 0 };
 	static int time, piece;
 
+	
 	public static class Point {
 		int x, y;
 
@@ -56,7 +57,6 @@ public class Main_2636_치즈 {
 			decay();
 		}
 	}
-
 
 	private static void decay() {
 		v = new boolean[N][M];
