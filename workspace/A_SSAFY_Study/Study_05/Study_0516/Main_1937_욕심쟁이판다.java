@@ -39,7 +39,6 @@ public class Main_1937_욕심쟁이판다 {
 			}
 		}
 		solve();
-//		print();
 
 		int res = 0;
 		for (int i = 0; i < N; i++) {
@@ -50,40 +49,28 @@ public class Main_1937_욕심쟁이판다 {
 		}
 		System.out.println(res);
 	}
-//
-//	private static void print() {
-//		for (int i = 0; i < N; i++) {
-//			for (int j = 0; j < N; j++) {
-//				System.out.print(max[i][j] + " ");
-//			}
-//			System.out.println();
-//
-//		}
-//		System.out.println();
-//	}
 
 	private static void solve() {
 		for (int i = 0; i < N; i++) {
 			for (int j = 0; j < N; j++) {
 				if (max[i][j] == 0) {
-					dfs(i, j, map[i][j]);
+					dfs(i, j);
 				}
 			}
 		}
-
 	}
 
-	private static int dfs(int x, int y, int weight) {
+	private static int dfs(int x, int y) {
 		max[x][y] = 1;
 		for (int d = 0; d < 4; d++) {
 			int ix = x + dx[d];
 			int jy = y + dy[d];
-			if (!safe(ix, jy) || map[ix][jy] <= weight)
+			if (!safe(ix, jy) || map[ix][jy] <= map[x][y])
 				continue;
 			if (max[ix][jy] != 0)
 				max[x][y] = Math.max(max[x][y], max[ix][jy] + 1);
 			else
-				max[x][y] = Math.max(max[x][y], dfs(ix, jy, map[ix][jy]) + 1);
+				max[x][y] = Math.max(max[x][y], dfs(ix, jy) + 1);
 		}
 		return max[x][y];
 	}
