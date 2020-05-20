@@ -1,7 +1,5 @@
 package REMIND.COMPLETE;
 
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Scanner;
 
 public class Main_15683_감시 {
