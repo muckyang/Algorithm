@@ -3,6 +3,8 @@ package Study_0516;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
@@ -27,7 +29,6 @@ public class Main_1937_욕심쟁이판다 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
-
 		N = Integer.parseInt(st.nextToken());
 		map = new int[N][N];
 		max = new int[N][N];
