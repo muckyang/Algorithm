@@ -78,8 +78,19 @@ public class Main_1486_등산 {
 		up[0][0] = 0;
 		q.add(new Point(0, 0));
 		solve1(); // 올라갈수 있는 최소값 정립
+		print();
+		
 		res = Math.max(res, solve2()); // 높은곳 부터 내려올수 있는지 파악
 		System.out.println(res);
+	}
+
+	private static void print() {
+		for(int i = 0 ; i< N ; i++) {
+			for(int j = 0; j< M ; j++) {
+				System.out.print(up[i][j] + " ");
+			}
+			System.out.println();
+		}
 	}
 
 	private static void solve1() {
@@ -105,11 +116,11 @@ public class Main_1486_등산 {
 						q.add(new Point(ix, jy));
 					}
 				}
-
 			}
 		}
 	}
 
+	
 	private static int solve2() {
 		while (!pq.isEmpty()) {
 			Mountine m = pq.poll();
@@ -124,7 +135,6 @@ public class Main_1486_등산 {
 			dq.add(new Point(m.x, m.y));
 			if (bfs())
 				return m.high;
-
 		}
 		return 0;
 	}

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="javax.tools.ToolProvider"/>
 <fullyQualifiedTypeName name="java.util.Deque"/>
 <fullyQualifiedTypeName name="Study_0229.Main_1931_회의실배정.Point"/>
 <fullyQualifiedTypeName name="Study_0302.Solution_D5_1907_모래성쌓기_강의코드.Node"/>
@@ -18,7 +17,6 @@
 <fullyQualifiedTypeName name="Study_0416.exam01.Point"/>
 <fullyQualifiedTypeName name="Study_0419.Main_3190_뱀.Snake"/>
 <fullyQualifiedTypeName name="Study_0501.Main_1966_프린터큐.Print"/>
-<fullyQualifiedTypeName name="org.xml.sax.InputSource"/>
 <fullyQualifiedTypeName name="Study_0503.Main_1938_통나무옮기기.Point"/>
 <fullyQualifiedTypeName name="Study_0503.Main_1400_화물차.Traffic"/>
 <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
@@ -26,7 +24,6 @@
 <fullyQualifiedTypeName name="java.util.TreeSet"/>
 <fullyQualifiedTypeName name="java.util.Set"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="Study_0514.Main_2001_보석줍기.Point"/>
 <fullyQualifiedTypeName name="Study_0514.Main_1445_일요일아침의데이트.Point"/>
 <fullyQualifiedTypeName name="java.lang.StackOverflowError"/>
@@ -48,16 +45,19 @@
 <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="Study_0525.Main"/>
-<fullyQualifiedTypeName name="java.util.Queue"/>
 <fullyQualifiedTypeName name="Study_0531.Solution_Unknown_1953_탈주범검거.Point"/>
 <fullyQualifiedTypeName name="java.util.Stack"/>
 <fullyQualifiedTypeName name="java.util.Collections"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="java.util.zip.InflaterInputStream"/>
-<fullyQualifiedTypeName name="java.io.BufferedReader"/>
-<fullyQualifiedTypeName name="java.io.InputStreamReader"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.PriorityQueue"/>
-<fullyQualifiedTypeName name="java.util.StringTokenizer"/>
+<fullyQualifiedTypeName name="java.util.Queue"/>
 <fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="Study_0623.Main_1600_말이되고픈원숭이_.Point"/>
+<fullyQualifiedTypeName name="org.xml.sax.InputSource"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+<fullyQualifiedTypeName name="java.util.StringTokenizer"/>
 </qualifiedTypeNameHistroy>
