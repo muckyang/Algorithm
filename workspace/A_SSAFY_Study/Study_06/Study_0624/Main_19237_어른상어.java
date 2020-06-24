@@ -13,7 +13,7 @@ public class Main_19237_어른상어 {
 	static int temp[][];
 	static int smell[][];
 	static int time[][];
-	static int priority[][][];
+	static int pri[][][];
 	static PriorityQueue<Shark> pq;
 	static int res;
 	static int dx[] = { 0, -1, 1, 0, 0 };
@@ -41,18 +41,20 @@ public class Main_19237_어른상어 {
 		M = Integer.parseInt(st.nextToken()); // 상어수
 		K = Integer.parseInt(st.nextToken()); // 냄새 지속시간
 		map = new int[N][N];
-		temp = new int[N][N];
 		smell = new int[N][N];
 		time = new int[N][N];
 		see = new int[N + 1];
-		priority = new int[M + 1][5][4];
+		pri = new int[M + 1][5][5];
 		pq = new PriorityQueue<>();
 		for (int i = 0; i < N; i++) {
 			st = new StringTokenizer(br.readLine());
 			for (int j = 0; j < N; j++) {
 				map[i][j] = Integer.parseInt(st.nextToken());
-				if (map[i][j] != 0)
+				if (map[i][j] != 0) {
 					pq.add(new Shark(i, j, map[i][j]));
+					smell[i][j] = map[i][j];
+					time[i][j] = K;
+				}
 			}
 		}
 		st = new StringTokenizer(br.readLine());
@@ -65,7 +67,7 @@ public class Main_19237_어른상어 {
 			for (int j = 1; j <= 4; j++) {// 보는 방향
 				st = new StringTokenizer(br.readLine());
 				for (int k = 0; k < 4; k++) { // 우선순위
-					priority[i][j][k] = Integer.parseInt(st.nextToken());
+					pri[i][j][k] = Integer.parseInt(st.nextToken());
 				}
 			}
 		}
@@ -76,24 +78,90 @@ public class Main_19237_어른상어 {
 	}
 
 	private static void solve() {
-		int time = 0;
+		int during = 0;
 		while (!pq.isEmpty()) {
 			int size = pq.size();
 			// 한마리만 남은지 체크
 			if (size == 1) {
-				res = time;
+				res = during;
 				return;
 			}
 			// 1000초 경과
-			if (time >= 1000)
+			if (during >= 1000)
 				return;
-
+			temp = new int[N][N];
 			for (int s = 0; s < size; s++) {
-
+				Shark p = pq.poll();
+				boolean go = false;
+				// 냄새 없는곳 찾기
+				for (int d = 0; d < 4; d++) {
+					int t = pri[p.size][see[p.size]][d];
+					int tx = p.x + dx[t];
+					int ty = p.y + dy[t];
+					if (!safe(tx, ty) || smell[tx][ty] != 0)
+						continue;
+					go = true;
+					if (temp[tx][ty] == 0) {
+						temp[tx][ty] = p.size;
+						see[p.size] = t;
+					}
+					break;
+				}
+				// 4방향 냄새로 가득찬경우
+				if (!go) {
+					for (int d = 0; d < 4; d++) {
+						int t = pri[p.size][see[p.size]][d];
+						int tx = p.x + dx[t];
+						int ty = p.y + dy[t];
+						if (!safe(tx, ty) || smell[tx][ty] != p.size)
+							continue;
+						if (temp[tx][ty] == 0) {
+							temp[tx][ty] = p.size;
+							see[p.size] = t;
+						}
+						break;
+					}
+				}
 			}
-			time++;
+			// 냄새 시간감소
+			smelldown();
+			// 이동한위치에 냄새 추가 , 원본 맵으로 복사
+			addsmell();
+			during++;
 		}
 
+	}
+
+	private static void addsmell() {
+		map = new int[N][N];
+		for (int i = 0; i < N; i++) {
+			for (int j = 0; j < N; j++) {
+				if (temp[i][j] != 0) {
+					smell[i][j] = map[i][j] = temp[i][j];
+					pq.add(new Shark(i, j, temp[i][j]));
+					time[i][j] = K;
+				}
+			}
+		}
+	}
+
+	private static void smelldown() {
+		for (int i = 0; i < N; i++) {
+			for (int j = 0; j < N; j++) {
+				if (smell[i][j] != 0) {
+					time[i][j]--;
+					if (time[i][j] == 0)
+						smell[i][j] = 0;
+				}
+			}
+		}
+
+	}
+
+	private static boolean safe(int tx, int ty) {
+		if (tx >= 0 && ty >= 0 && tx < N && ty < N)
+			return true;
+		return false;
 	}
 
 }
