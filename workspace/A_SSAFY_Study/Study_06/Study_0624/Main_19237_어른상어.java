@@ -43,7 +43,7 @@ public class Main_19237_어른상어 {
 		map = new int[N][N];
 		smell = new int[N][N];
 		time = new int[N][N];
-		see = new int[N + 1];
+		see = new int[M + 1];
 		pri = new int[M + 1][5][5];
 		pq = new PriorityQueue<>();
 		for (int i = 0; i < N; i++) {
@@ -71,7 +71,6 @@ public class Main_19237_어른상어 {
 				}
 			}
 		}
-
 		res = -1;
 		solve();
 		System.out.println(res);
@@ -137,7 +136,8 @@ public class Main_19237_어른상어 {
 		for (int i = 0; i < N; i++) {
 			for (int j = 0; j < N; j++) {
 				if (temp[i][j] != 0) {
-					smell[i][j] = map[i][j] = temp[i][j];
+					smell[i][j] = temp[i][j];
+					map[i][j] = temp[i][j];
 					pq.add(new Shark(i, j, temp[i][j]));
 					time[i][j] = K;
 				}
