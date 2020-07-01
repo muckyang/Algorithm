@@ -67,32 +67,10 @@ public class Main_4991_로봇청소기 {
 			K = list.size();
 			vlist = new boolean[K];
 			link = new int[K][K];
-			for (int i = 0; i < K; i++) {
-				v = new boolean[H][W];
-				Point p = list.get(i);
-				v[p.x][p.y] = true;
-				q.add(p);
-				int depth = 0;
-				while (!q.isEmpty()) {
-					int size = q.size();
-					depth++;
-					for (int s = 0; s < size; s++) {
-						Point point = q.poll();
-						for (int d = 0; d < 4; d++) {
-							int ix = point.x + dx[d];
-							int jy = point.y + dy[d];
-							if (!safe(ix, jy) || v[ix][jy] || map[ix][jy] == -1)
-								continue;
-							v[ix][jy] = true;
-							if (map[ix][jy] > 0) {
-								link[p.value - 1][map[ix][jy] - 1] = depth;
-							}
-							q.add(new Point(ix, jy, map[ix][jy]));
-						}
-					}
-				}
-
-			}
+			//각 청소할위치간의 거리 측정
+			dist();
+			
+			
 			// 최소거리 찾기
 			min = Integer.MAX_VALUE;
 			vlist[0] = true;
@@ -100,6 +78,35 @@ public class Main_4991_로봇청소기 {
 			if(min == Integer.MAX_VALUE)
 				min = -1;
 			System.out.println(min);
+		}
+	}
+
+	private static void dist() {
+		for (int i = 0; i < K; i++) {
+			v = new boolean[H][W];
+			Point p = list.get(i);
+			v[p.x][p.y] = true;
+			q.add(p);
+			int depth = 0;
+			while (!q.isEmpty()) {
+				int size = q.size();
+				depth++;
+				for (int s = 0; s < size; s++) {
+					Point point = q.poll();
+					for (int d = 0; d < 4; d++) {
+						int ix = point.x + dx[d];
+						int jy = point.y + dy[d];
+						if (!safe(ix, jy) || v[ix][jy] || map[ix][jy] == -1)
+							continue;
+						v[ix][jy] = true;
+						if (map[ix][jy] > 0) 
+							link[p.value - 1][map[ix][jy] - 1] = depth;
+						
+						q.add(new Point(ix, jy, map[ix][jy]));
+					}
+				}
+			}
+
 		}
 	}
 
