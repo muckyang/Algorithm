@@ -47,8 +47,8 @@ public class Main_1389_케빈베이컨의6단계법칙 {
 
 		for (int i = 0; i < N; i++) {
 			v = new int[N];
-			q.add();
-			solve(i);
+//			q.add();
+//			solve(i);
 		}
 	}
 }
