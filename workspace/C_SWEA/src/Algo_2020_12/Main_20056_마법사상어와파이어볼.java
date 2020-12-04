@@ -26,6 +26,12 @@ public class Main_20056_마법사상어와파이어볼 {
 			this.s = s;
 			this.d = d;
 		}
+
+		@Override
+		public String toString() {
+			return "Fire [y=" + y + ", x=" + x + ", m=" + m + ", s=" + s + ", d=" + d + "]";
+		}
+
 	}
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
@@ -53,7 +59,8 @@ public class Main_20056_마법사상어와파이어볼 {
 		}
 		int res = 0;
 		while (!q.isEmpty()) {
-			res += q.poll().m;
+			Fire pp = q.poll();
+			res += pp.m;
 		}
 		System.out.println(res);
 	}
@@ -71,7 +78,10 @@ public class Main_20056_마법사상어와파이어볼 {
 					if (m == 0)
 						continue;
 					for (int d = 0; d < 8; d += 2) {
-						q.add(new Fire(i, j, m, s, d + bal[i][j] - 1));
+						if (bal[i][j] == 2)
+							q.add(new Fire(i, j, m, s, d + 1));
+						else
+							q.add(new Fire(i, j, m, s, d));
 					}
 
 				}
@@ -90,10 +100,19 @@ public class Main_20056_마법사상어와파이어볼 {
 				x = abs(x);
 				if (number[y][x] == 0) {
 					number[y][x]++;
+					bal[y][x] = p.d % 2;
 					map[y][x] = new Fire(y, x, p.m, p.s, p.d);
 				} else {
 					number[y][x]++;
 					map[y][x].m += p.m;
+					map[y][x].s += p.s;
+					if (bal[y][x] < 2) {
+						if (bal[y][x] == p.d % 2) {
+							continue;
+						} else {
+							bal[y][x] = 2;
+						}
+					}
 				}
 			}
 		}
@@ -103,8 +122,9 @@ public class Main_20056_마법사상어와파이어볼 {
 		if (number >= N) {
 			number = number % N;
 		} else if (number < 0) {
-			number = N - 1 - Math.abs(number) % N;
+			number = (N - Math.abs(number) % N)%N;
 		}
 		return number;
 	}
+
 }
