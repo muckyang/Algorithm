@@ -122,7 +122,7 @@ public class Main_20056_마법사상어와파이어볼 {
 		if (number >= N) {
 			number = number % N;
 		} else if (number < 0) {
-			number = (N - Math.abs(number) % N)%N;
+			number = (N - Math.abs(number) % N) % N;
 		}
 		return number;
 	}
