@@ -1,4 +1,4 @@
-package Algo_2020_12;
+package Algo12_Week_1;
 
 import java.io.BufferedReader;
 import java.io.IOException;
