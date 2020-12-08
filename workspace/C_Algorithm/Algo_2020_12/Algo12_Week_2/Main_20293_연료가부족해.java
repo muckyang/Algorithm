@@ -1,4 +1,4 @@
-package Algo12_Week_1;
+package Algo12_Week_2;
 
 import java.io.BufferedReader;
 import java.io.IOException;
