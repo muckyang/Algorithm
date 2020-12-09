@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class Main_20165_인내의도미노장인 {
+public class Main_20165_인내의도미노장인호석 {
 	static int N, M, R;
 	static int[][] map;
 	static StringBuilder sb;
