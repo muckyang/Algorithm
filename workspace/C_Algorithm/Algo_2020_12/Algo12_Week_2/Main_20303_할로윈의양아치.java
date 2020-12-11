@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.StringTokenizer;
-
+//56856, 1080
 public class Main_20303_할로윈의양아치 {
 	static int N, M, K;
 	static LinkedList<Integer>[] list;
