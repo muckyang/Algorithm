@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="Study_0531.Solution_Unknown_1953_탈주범검거.Point"/>
-<fullyQualifiedTypeName name="java.util.zip.InflaterInputStream"/>
-<fullyQualifiedTypeName name="Study_0623.Main_1600_말이되고픈원숭이_.Point"/>
-<fullyQualifiedTypeName name="Study_0625.Main_19236_청소년상어_2.Shark"/>
-<fullyQualifiedTypeName name="java.io.InputStream"/>
-<fullyQualifiedTypeName name="Study_0705.Main_1916_최소비용구하기.Bus"/>
-<fullyQualifiedTypeName name="java.awt.datatransfer.ClipboardOwner"/>
 <fullyQualifiedTypeName name="javax.crypto.spec.DESedeKeySpec"/>
 <fullyQualifiedTypeName name="Study_0708.Main_19238_스타트택시.Destination"/>
 <fullyQualifiedTypeName name="Study_0708.Main_19238_스타트택시2.Destination"/>
@@ -32,7 +25,6 @@
 <fullyQualifiedTypeName name="org.omg.PortableServer.LifespanPolicyOperations"/>
 <fullyQualifiedTypeName name="Uncomplete.AMain_10273_고대동굴탐사.Link"/>
 <fullyQualifiedTypeName name="java.lang.Override"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.nio.Buffer"/>
 <fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="java.lang.Object"/>
@@ -44,20 +36,28 @@
 <fullyQualifiedTypeName name="javax.print.attribute.standard.NumberOfDocuments"/>
 <fullyQualifiedTypeName name="java.util.Stack"/>
 <fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="java.util.Iterator"/>
 <fullyQualifiedTypeName name="java.lang.Character"/>
-<fullyQualifiedTypeName name="java.lang.LinkageError"/>
 <fullyQualifiedTypeName name="java.util.concurrent.ScheduledThreadPoolExecutor"/>
-<fullyQualifiedTypeName name="java.util.Arrays"/>
-<fullyQualifiedTypeName name="java.lang.StringBuilder"/>
 <fullyQualifiedTypeName name="java.util.concurrent.SynchronousQueue"/>
+<fullyQualifiedTypeName name="java.lang.Package"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="javax.swing.InputMap"/>
+<fullyQualifiedTypeName name="javax.swing.plaf.basic.BasicButtonUI"/>
+<fullyQualifiedTypeName name="java.io.InputStream"/>
+<fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+<fullyQualifiedTypeName name="Algo12_Week_2.Main_20303_할로윈의양아치.Sum"/>
+<fullyQualifiedTypeName name="Algo12_Week_2.Main_20181_꿈틀꿈틀호석애벌레_효율성.EndPoint"/>
+<fullyQualifiedTypeName name="java.lang.LinkageError"/>
 <fullyQualifiedTypeName name="java.util.Queue"/>
 <fullyQualifiedTypeName name="java.util.PriorityQueue"/>
-<fullyQualifiedTypeName name="java.lang.Package"/>
-<fullyQualifiedTypeName name="java.io.InputStreamReader"/>
-<fullyQualifiedTypeName name="java.io.BufferedReader"/>
-<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="Algo12_Week_2.Solution_5644_무선충전.Battery"/>
+<fullyQualifiedTypeName name="Algo12_Week_2.Solution_5648_원자소멸시뮬레이션.Oneja"/>
 <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
 <fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
 </qualifiedTypeNameHistroy>

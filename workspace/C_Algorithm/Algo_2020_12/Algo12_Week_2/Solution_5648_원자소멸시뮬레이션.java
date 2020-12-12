@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.StringTokenizer;
-
+//시간초과 , 2000,2000 매번도는게 문제다..
 public class Solution_5648_원자소멸시뮬레이션 {
 	static int cnt[][];
 	static boolean v[][];
