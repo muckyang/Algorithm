@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.lang.String"/>
-<fullyQualifiedTypeName name="Study_0712.Main_19236_청소년상어.Fish"/>
 <fullyQualifiedTypeName name="java.lang.reflect.Array"/>
 <fullyQualifiedTypeName name="Study_0904.Kakao_2020_블록이동하기.Point"/>
 <fullyQualifiedTypeName name="java.util.concurrent.ArrayBlockingQueue"/>
@@ -23,7 +21,6 @@
 <fullyQualifiedTypeName name="Uncomplete.AMain_10273_고대동굴탐사.Link"/>
 <fullyQualifiedTypeName name="java.lang.Override"/>
 <fullyQualifiedTypeName name="java.nio.Buffer"/>
-<fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="java.lang.Object"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="java.util.concurrent.LinkedBlockingDeque"/>
@@ -37,14 +34,9 @@
 <fullyQualifiedTypeName name="java.util.concurrent.ScheduledThreadPoolExecutor"/>
 <fullyQualifiedTypeName name="java.util.concurrent.SynchronousQueue"/>
 <fullyQualifiedTypeName name="java.lang.Package"/>
-<fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="javax.swing.InputMap"/>
 <fullyQualifiedTypeName name="javax.swing.plaf.basic.BasicButtonUI"/>
 <fullyQualifiedTypeName name="java.io.InputStream"/>
-<fullyQualifiedTypeName name="java.io.InputStreamReader"/>
-<fullyQualifiedTypeName name="java.io.IOException"/>
-<fullyQualifiedTypeName name="java.io.BufferedReader"/>
-<fullyQualifiedTypeName name="java.lang.StringBuilder"/>
 <fullyQualifiedTypeName name="Algo12_Week_2.Main_20303_할로윈의양아치.Sum"/>
 <fullyQualifiedTypeName name="Algo12_Week_2.Main_20181_꿈틀꿈틀호석애벌레_효율성.EndPoint"/>
 <fullyQualifiedTypeName name="java.lang.LinkageError"/>
@@ -52,12 +44,20 @@
 <fullyQualifiedTypeName name="java.util.PriorityQueue"/>
 <fullyQualifiedTypeName name="Algo12_Week_2.Solution_5644_무선충전.Battery"/>
 <fullyQualifiedTypeName name="Algo12_Week_2.Solution_5648_원자소멸시뮬레이션.Oneja"/>
-<fullyQualifiedTypeName name="java.util.StringTokenizer"/>
 <fullyQualifiedTypeName name="java.util.LinkedList"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.util.Iterator"/>
 <fullyQualifiedTypeName name="java.util.concurrent.ConcurrentHashMap.KeySetView"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.util.Map.Entry"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
+<fullyQualifiedTypeName name="java.util.StringTokenizer"/>
+<fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
 </qualifiedTypeNameHistroy>
