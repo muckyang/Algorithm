@@ -9,9 +9,8 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.Queue;
 import java.util.StringTokenizer;
-
-//해쉬맵으로 해보자! 
-//132492kb ,1574ms
+ 
+//0.5 지점에서 만나서 사라지는것을 먼저 처리하고 남은거 처리해보기 
 public class Solution_5648_원자소멸시뮬레이션_Priority2_todo {
 	static HashMap<Integer, Oneja> hm;
 	static Queue<Oneja> q;
