@@ -14,7 +14,6 @@ public class Main_1644_소수의연속합 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		N = Integer.parseInt(br.readLine());
-		arr = new int[300000];
 		cnt = sp = ep = res = sum = 0;
 		calPrime();
 		setPrime();
