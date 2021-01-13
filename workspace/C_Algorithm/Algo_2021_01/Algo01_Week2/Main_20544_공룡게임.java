@@ -3,7 +3,7 @@ package Algo01_Week2;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
+//solution!! 
 public class Main_20544_공룡게임 {
 	static int N;
 	static int cache[][][][];

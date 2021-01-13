@@ -7,9 +7,10 @@ import java.util.Arrays;
 import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
-public class Main_20416_역전의제왕Easy {
+public class Main_20417_역전의제왕Normal {
 	static int N, K;
 	static Participant part[];
+	static int [] probcnt;
 	static PriorityQueue<Solution> pq[];
 	static int res;
 
@@ -18,6 +19,11 @@ public class Main_20416_역전의제왕Easy {
 		int proNumber;
 		int time;
 		int cnt;
+
+		@Override
+		public String toString() {
+			return "Solution [index=" + index + ", proNumber=" + proNumber + ", time=" + time + ", cnt=" + cnt + "]";
+		}
 
 		public Solution(int index, int proNumber, int time, int cnt) {
 			this.index = index;
@@ -47,6 +53,11 @@ public class Main_20416_역전의제왕Easy {
 			this.point = point;
 		}
 
+		@Override
+		public String toString() {
+			return "Participant [index=" + index + ", solution=" + solution + ", panalty=" + panalty + ", lasttime="
+					+ lasttime + ", point=" + point + "]";
+		}
 
 		@Override
 		public int compareTo(Participant p) {
@@ -67,6 +78,7 @@ public class Main_20416_역전의제왕Easy {
 		N = Integer.parseInt(st.nextToken());
 		K = Integer.parseInt(st.nextToken());
 		part = new Participant[N];
+		probcnt = new int[13];
 		pq = new PriorityQueue[N];
 		res = 0;
 		for (int i = 0; i < N; i++) {
@@ -80,19 +92,23 @@ public class Main_20416_역전의제왕Easy {
 			int partId = Integer.parseInt(st.nextToken()) - 1;
 			int probNum = Integer.parseInt(st.nextToken());
 			int cnt = Integer.parseInt(st.nextToken());
-
+			probcnt[probNum-1]++;
 			if (time > 18000) {// 프리징
 				freezeCnt++;
-				pq[partId].add(new Solution(partId, probNum, time, cnt));
+				pq[partId].add(new Solution(partId, probNum, time+ probcnt[probNum-1], cnt));
 			} else {// 그 전까지
 				part[partId].solution++;
-				part[partId].panalty += time + (cnt - 1) * 20;
-				part[partId].lasttime = time;
+				part[partId].panalty += time/100 + (cnt - 1) * 20;
+				part[partId].lasttime =  time + probcnt[probNum-1];
 			}
 
 		}
-		///입력 끝
+
 		Arrays.sort(part); // 프리징 전 까지의 순위
+//		for (Participant p : part) {
+//			System.out.println(p.toString());
+//		}
+//		System.out.println();
 		while (freezeCnt != 0) {
 			int sp = N - 1; // 끝 등수부터 체크
 			while (true) {
@@ -103,24 +119,27 @@ public class Main_20416_역전의제왕Easy {
 					continue;
 				}
 				Solution p = pq[part[sp].index].poll();
-				System.out.println("probNum : " + p.proNumber);
+//				System.out.println("probNum : " + p.proNumber);
 				part[sp].solution++;
-				part[sp].panalty += p.time + (p.cnt - 1) * 20;
-				part[sp].lasttime = Math.max(p.time, part[sp].lasttime);
+				part[sp].panalty += p.time/100 + (p.cnt - 1) * 20;
+				part[sp].lasttime = Math.max(p.time,part[sp].lasttime);
 				break;
 			}
+			int before = part[sp].index;// 이전순위 인덱스 저장
+//			System.out.println("before index :"+ before);
+			Arrays.sort(part); // 순위 다시 합계
 			int now = 0;
 			for (Participant p : part) {
-				if (part[sp].index == p.index) {
+				if (before == p.index) {
 					p.point += sp - now;
 					break;
 				}
 				now++;
 			}
-			for (Participant p : part) {
-				System.out.println(p.toString());
-			}
-			System.out.println();
+//			for (Participant p : part) {
+//				System.out.println(p.toString());
+//			}
+//			System.out.println();
 			freezeCnt--;
 		}
 		int maxPoint = 0;
@@ -139,6 +158,6 @@ public class Main_20416_역전의제왕Easy {
 	private static int stringToMin(String str) {
 		String sarr[] = new String[2];
 		sarr = str.split(":");
-		return Integer.parseInt(sarr[0]) * 60 + Integer.parseInt(sarr[1]);
+		return (Integer.parseInt(sarr[0]) * 60 + Integer.parseInt(sarr[1])) * 100;
 	}
 }
