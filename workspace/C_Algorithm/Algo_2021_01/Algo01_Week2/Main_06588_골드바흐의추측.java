@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Main_6588_골드바흐의추측 {
+public class Main_06588_골드바흐의추측 {
 	static int K;
 	static boolean c[];
 

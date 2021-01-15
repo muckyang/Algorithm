@@ -5,22 +5,18 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main_1934_최소공배수 {
-	static int T, A, B;
+public class Main_02609_최대공약수와최소공배수 {
+	static int A, B;
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
-		StringBuilder sb = new StringBuilder();
 
-		T = Integer.parseInt(st.nextToken());
-		for (int i = 0; i < T; i++) {
-			st = new StringTokenizer(br.readLine());
-			A = Integer.parseInt(st.nextToken());
-			B = Integer.parseInt(st.nextToken());
-			sb.append(A*B/solve()).append("\n");
-		}
-		System.out.println(sb.toString());
+		A = Integer.parseInt(st.nextToken());
+		B = Integer.parseInt(st.nextToken());
+		int res = solve();
+		System.out.println(res);
+		System.out.println(A * B / res);
 	}
 
 	private static int solve() {
@@ -34,10 +30,10 @@ public class Main_1934_최소공배수 {
 			}
 			if (b % a != 0) {
 				b = b % a;
-			}else {
+			} else {
 				return a;
 			}
-			
+
 		}
 	}
 }

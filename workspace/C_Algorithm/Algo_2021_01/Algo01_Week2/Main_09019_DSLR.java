@@ -8,7 +8,7 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class Main_9019_DSLR {
+public class Main_09019_DSLR {
 	static Queue<Register> pq;
 	static boolean v[];
 	static int T, input, target;
