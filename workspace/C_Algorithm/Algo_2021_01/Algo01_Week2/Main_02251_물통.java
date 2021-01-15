@@ -8,7 +8,7 @@ import java.util.Queue;
 import java.util.StringTokenizer;
 import java.util.TreeSet;
 
-public class Main_2251_물통 {
+public class Main_02251_물통 {
 	static int A, B, C;
 	static boolean v[][][];
 	static TreeSet<Integer> ts;

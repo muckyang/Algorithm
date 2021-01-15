@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main_9613_GCD합 {
+public class Main_09613_GCD합 {
 	static int T;
 	static int N;
 	static int list[];

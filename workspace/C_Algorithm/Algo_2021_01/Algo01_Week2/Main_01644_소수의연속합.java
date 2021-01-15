@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Main_1644_소수의연속합 {
+public class Main_01644_소수의연속합 {
 	static final int MAX = 4000000;
 	static int[] arr = new int[300000];
 	static boolean[] bool = new boolean[MAX + 1];
