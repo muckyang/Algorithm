@@ -1,6 +1,7 @@
 package TODO;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.LinkedList;
 
 public class Solution_외벽점검 {
@@ -12,7 +13,6 @@ public class Solution_외벽점검 {
 	public static void main(String[] args) {
 		int[] answer = { 1, 2, 3, 4, 5 };
 		int[] res = solution(answer);
-		System.out.println();
 	}
 
 	public static int[] solution(int[] answer) {
@@ -35,6 +35,13 @@ public class Solution_외벽점검 {
 			if (max == cnt[i])
 				list.add(i);
 		}
+		Collections.sort(list);
+		res = new int[list.size()];
+		int c = 0;
+		for(int k : list) {
+			res[c++] =k;
+		}
+			
 		return res;
 	}
 

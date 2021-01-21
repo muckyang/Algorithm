@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
-
+//132364 KB, 520ms
 public class Main_16947_서울지하철2호선 {
 	static int N, rotateNum;
 	static LinkedList<Integer> cycle;
