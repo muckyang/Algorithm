@@ -8,7 +8,7 @@ import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.StringTokenizer;
 
-public class Main_14718_용감한용사진수 {
+public class Main_14718_용감한용사진수TODO {
 	static LinkedList<Power> HLink;
 	static LinkedList<Power> ALink;
 	static LinkedList<Power> ILink;
