@@ -101,6 +101,7 @@ public class sol4 {
 				// 20.09.17 최단경로 시간초과 문제 해결하면서 변경 
 //				for (int j = 0; j < list[node.from].size(); j++) {
 //					Point k = list[node.from].get(j);
+				// 21.02.09 프로그래머스를 통해 제출 결과 효율성 30개중 6개 시간초과 
 				for (Point k : list[node.from]) {
 					if (k.weight + node.weight <= price[sp][k.to]) {
 						int p = k.weight + node.weight;

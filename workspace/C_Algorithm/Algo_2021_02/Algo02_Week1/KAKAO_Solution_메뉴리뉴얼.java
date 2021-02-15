@@ -30,13 +30,13 @@ public class KAKAO_Solution_메뉴리뉴얼 {
 		}
 
 		public int compareTo(Menu m) {
-			return this.count - m.count;
+			return m.count -this.count;
 		}
 
 	}
 
 	public static String[] solution(String[] orders, int[] course) {
-		String[] answer = {};
+		String[] answer;
 		LinkedList<String> list = new LinkedList<>();
 		hm = new HashMap[11];
 		for (int i = 0; i < 11; i++) {
@@ -73,9 +73,13 @@ public class KAKAO_Solution_메뉴리뉴얼 {
 			}
 		}
 		Collections.sort(list);
+		answer = new String[list.size()];
+		int cnt = 0 ;
 		for (String s : list) {
-//			ans
+			answer[cnt++] = s;
+			System.out.println(s);
 		}
+		
 		return answer;
 
 	}

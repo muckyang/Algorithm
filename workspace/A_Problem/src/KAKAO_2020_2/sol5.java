@@ -5,9 +5,9 @@ import java.util.StringTokenizer;
 public class sol5 {
 
 	public static void main(String[] args) {
-		String play_time = "00:01:00";
-		String adv_time = "00:01:00";
-		String[] logs = { "00:01:00-00:01:00"};
+		String play_time = "00:02:00";
+		String adv_time = "00:00:59";
+		String[] logs = { "00:01:59-00:02:00"};
 		System.out.println(solution(play_time, adv_time, logs));
 
 	}
@@ -22,15 +22,14 @@ public class sol5 {
 				String all = logs[i];
 				String arr[] = all.split("-");
 				count[stoi(arr[0])]++;
-				count[stoi(arr[1])]--;
+				count[stoi(arr[1])+1]--;
 			}
 			int sp = 0;
 			int res = 0;
 			int sumCast = 0;
 			int ecounter = 0;
-			for (int i = 0; i < advtime; i++) {
+			for (int i = 0; i < advtime+1; i++) {
 				ecounter += count[i];
-				
 				sumCast += ecounter;
 			}
 
@@ -73,16 +72,8 @@ public class sol5 {
 			int res = 0;
 			StringTokenizer st = new StringTokenizer(s, ":");
 			for (int i = 0; i < 3; i++) {
-				s = st.nextToken();
-				if (i == 0) {
-					res += Integer.parseInt(s) * 3600;
-
-				} else if (i == 1) {
-					res += Integer.parseInt(s) * 60;
-
-				} else {
-					res += Integer.parseInt(s);
-				}
+			res += (Math.pow(60, 2-i))*Integer.parseInt(st.nextToken());
+				
 			}
 			return res;
 		}
