@@ -7,7 +7,6 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
 
-import org.omg.CORBA.Principal;
 
 public class KAKAO_Solution_메뉴리뉴얼 {
 	public static void main(String[] args) {

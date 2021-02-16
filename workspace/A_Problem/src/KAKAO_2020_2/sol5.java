@@ -22,7 +22,7 @@ public class sol5 {
 				String all = logs[i];
 				String arr[] = all.split("-");
 				count[stoi(arr[0])]++;
-				count[stoi(arr[1])+1]--;
+				count[stoi(arr[1])]--;
 			}
 			int sp = 0;
 			int res = 0;
