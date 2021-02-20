@@ -50,7 +50,6 @@
 <fullyQualifiedTypeName name="javax.swing.border.LineBorder"/>
 <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="org.omg.CORBA.Principal"/>
 <fullyQualifiedTypeName name="Algo02_Week1.Main_20665_독서실거리두기.People"/>
 <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
@@ -60,4 +59,5 @@
 <fullyQualifiedTypeName name="java.util.Queue"/>
 <fullyQualifiedTypeName name="java.lang.Comparable"/>
 <fullyQualifiedTypeName name="java.util.PriorityQueue"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
 </qualifiedTypeNameHistroy>
