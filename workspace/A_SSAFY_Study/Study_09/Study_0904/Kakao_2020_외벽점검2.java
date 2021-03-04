@@ -29,7 +29,7 @@ public class Kakao_2020_외벽점검2 {
 			wall[weak[i]] = true;
 		}
 		for (int i = 1; i <= dist.length; i++) {
-			perm(0,0, i, weak, dist, n);// count , 선택할수 있는 지점 수, 지점수
+			perm(0, i, weak, dist, n);// count , 선택할수 있는 지점 수, 지점수
 			if (res != -1) {
 				return res;
 			}
@@ -38,7 +38,7 @@ public class Kakao_2020_외벽점검2 {
 		return res;
 	}
 
-	private static void perm(int start,int cnt, int end, int[] weak, int[] dist, int n) {
+	private static void perm(int cnt, int end, int[] weak, int[] dist, int n) {
 		if (res != -1) {
 			return;
 		}
@@ -62,7 +62,7 @@ public class Kakao_2020_외벽점검2 {
 							temp[weak[k]] = false;
 					}
 				} else {
-					System.out.println("qwe");
+				
 					for (int k = check[i] + 1;; k++) {
 						if (k == weak.length || weak[k] > cover)
 							break;
@@ -80,12 +80,12 @@ public class Kakao_2020_외벽점검2 {
 			res = end;
 			return;
 		}
-		for (int i = start; i < weak.length; i++) {
+		for (int i = 0; i < weak.length; i++) {
 			if (wall[weak[i]]) {
 				wall[weak[i]] = false;
 				check[cnt] = i;
 				wrap[cnt] = weak[i];
-				perm(i+1,cnt + 1, end, weak, dist, n);
+				perm(cnt + 1, end, weak, dist, n);
 				wall[weak[i]] = true;
 
 			}
